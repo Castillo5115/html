@@ -1,0 +1,15 @@
+.cabecera{
+    text-align: center;
+}
+.codigo{
+    text-align: center;
+    width: 100%;
+}
+.tablero,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
