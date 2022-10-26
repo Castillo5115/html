@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/estilos_cuadrado_magico.css">
     <title>Practica U2 - Cuadrado Mágico</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
                                 }
                             echo "</tr>";
                         }
-                    echo "</table>";
+                    echo "</table><br>";
                 }
 
 
@@ -42,9 +42,9 @@
                         $resultado = $resultado + $this->array[0][$i];
                     }
                     if($resultado == 15){
-                        echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
+                       echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
                     }else{
-                        echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
+                       echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
                     }
                               
                 }
@@ -72,16 +72,82 @@
                     }
                               
                 }
+                function test_sumaColumna_1(){
+                    $resultado = 0;
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $resultado = $resultado + $this->array[$i][0];
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
+                    }else{
+                        echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
+                    }
+                              
+                }
+                function test_sumaColumna_2(){
+                    $resultado = 0;
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $resultado = $resultado + $this->array[$i][1];
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaColumna_2 = " , $resultado, " -> OK<br>";
+                    }else{
+                        echo "test_sumaColumna_2 = " , $resultado, " -> KO<br>";
+                    }
+                              
+                }
+                function test_sumaColumna_3(){
+                    $resultado = 0;
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $resultado = $resultado + $this->array[$i][2];
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaColumna_3 = " , $resultado, " -> OK<br>";
+                    }else{
+                        echo "test_sumaColumna_3 = " , $resultado, " -> KO<br>";
+                    }
+                              
+                }
+                function test_sumaDiagonal_1(){
+                    $resultado = 0;
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $resultado = $resultado + $this->array[$i][$i];
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
+                    }else{
+                        echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
+                    }
+                              
+                }
+                function test_sumaDiagonal_2(){
+                    $resultado = 0;
+                    $suma = count($this->array);
+                    while($suma > 0){
+                        $resultado = $this-> array[$suma][$suma];
+                        $suma--;
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
+                    }else{
+                        echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
+                    }                           
+                }
             }
             
             $tablero_1 = new Tablero(array(array(4,9,2),
                                             array(3,5,7),
-                                            array(8,1,6)));
+                                            array(8,1,6),));
             $tablero_1 -> crearTablero();
             //Probar Tests
             $tablero_1 -> test_sumaFila_1();
             $tablero_1 -> test_sumaFila_2();
             $tablero_1 -> test_sumaFila_3();
+            $tablero_1 -> test_sumaColumna_1();
+            $tablero_1 -> test_sumaColumna_2();
+            $tablero_1 -> test_sumaColumna_3();
+            $tablero_1 -> test_sumaDiagonal_1();
+            $tablero_1 -> test_sumaDiagonal_2();
         ?>
     </div>
 </body>
