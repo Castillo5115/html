@@ -121,17 +121,21 @@
                               
                 }
                 function test_sumaDiagonal_2(){
+                    
                     $resultado = 0;
-                    $suma = count($this->array);
-                    while($suma > 0){
-                        $resultado = $this-> array[$suma][$suma];
-                        $suma--;
+                    $i = 0;
+                    $j = 2;
+                    while($i < 3){
+                        $resultado += $this->array[$i][$j];
+                        $j--;
+                        $i++;
                     }
+
                     if($resultado == 15){
                         echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
                     }else{
                         echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
-                    }                           
+                    }                         
                 }
             }
             
