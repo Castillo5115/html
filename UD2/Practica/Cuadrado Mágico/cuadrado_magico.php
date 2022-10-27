@@ -21,7 +21,7 @@
                 } 
                 
                 // Funciones
-                function crearTablero(){
+                function pintarCuadradoMagico(){
                     echo "<table class=","tablero",">";
                         for ($i=0; $i < count($this->array); $i++) { 
                             echo "<tr>";
@@ -43,8 +43,10 @@
                     }
                     if($resultado == 15){
                        echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
+                       return true;
                     }else{
                        echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
+                       return false;
                     }
                               
                 }
@@ -55,8 +57,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaFila_2 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
                         echo "test_sumaFila_2 = " , $resultado, " -> KO<br>";
+                        return false;
                     }
                               
                 }
@@ -67,8 +71,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaFila_3 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
                         echo "test_sumaFila_3 = " , $resultado, " -> KO<br>";
+                        return false;
                     }
                               
                 }
@@ -79,8 +85,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
                         echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
+                        return false;
                     }
                               
                 }
@@ -91,8 +99,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_2 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
                         echo "test_sumaColumna_2 = " , $resultado, " -> KO<br>";
+                        return false;
                     }
                               
                 }
@@ -103,24 +113,14 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_3 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
                         echo "test_sumaColumna_3 = " , $resultado, " -> KO<br>";
+                        return false;
                     }
                               
                 }
                 function test_sumaDiagonal_1(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[$i][$i];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
-                    }else{
-                        echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
-                    }
-                              
-                }
-                function test_sumaDiagonal_2(){
                     
                     $resultado = 0;
                     $i = 0;
@@ -132,17 +132,35 @@
                     }
 
                     if($resultado == 15){
-                        echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
+                        echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
+                        return true;
                     }else{
-                        echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
+                        echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
+                        return false;
                     }                         
                 }
+                function test_sumaDiagonal_2(){
+                    $resultado = 0;
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $resultado = $resultado + $this->array[$i][$i];
+                    }
+                    if($resultado == 15){
+                        echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
+                        return false;
+                    }else{
+                        echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
+                        return false;
+                    }
+                              
+                }
+                
             }
             
             $tablero_1 = new Tablero(array(array(4,9,2),
                                             array(3,5,7),
                                             array(8,1,6),));
-            $tablero_1 -> crearTablero();
+            $tablero_1 -> pintarCuadradoMagico();
+            
             //Probar Tests
             $tablero_1 -> test_sumaFila_1();
             $tablero_1 -> test_sumaFila_2();
