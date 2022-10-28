@@ -36,18 +36,15 @@
                 function sumaFilas(){
                     $filas = array();
                     for ($i=0; $i < count($this->array); $i++) { 
-                        $filas[$i] = array_sum($this->array[$i]);
                         if (array_sum($this->array[$i]) != 15) {
-                            return false;
+                            $filas[$i] = "false";
                             echo "Filas ",$i ,"=", $filas[$i], "<br>";
                         }else{
-                            return true;
+                            $filas[$i] = "true";
                             echo "Filas ",$i ,"=", $filas[$i], "<br>";
                         }
+                        
                     }
-                }
-                function sumaColumnas(){
-                    
                 }
 
 
