@@ -33,6 +33,22 @@
                     echo "</table><br>";
                 }
 
+                function sumaFilas(){
+                    $filas = array();
+                    for ($i=0; $i < count($this->array); $i++) { 
+                        $filas[$i] = array_sum($this->array[$i]);
+                        if (array_sum($this->array[$i]) != 15) {
+                            return false;
+                            echo "Filas ",$i ,"=", $filas[$i], "<br>";
+                        }else{
+                            return true;
+                            echo "Filas ",$i ,"=", $filas[$i], "<br>";
+                        }
+                    }
+                }
+                function sumaColumnas(){
+                    
+                }
 
 
                 // Tests
@@ -160,7 +176,7 @@
                                             array(3,5,7),
                                             array(8,1,6),));
             $tablero_1 -> pintarCuadradoMagico();
-            
+            $tablero_1 -> sumaFilas();
             //Probar Tests
             $tablero_1 -> test_sumaFila_1();
             $tablero_1 -> test_sumaFila_2();
