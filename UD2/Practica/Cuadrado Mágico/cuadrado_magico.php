@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="cabecera">
-        <h1>.--Cuadrado Mágico--.</h1>
+        <h1>===Cuadrado Mágico===</h1>
     </div>
     <div class="codigo">
         <?php
@@ -33,139 +33,165 @@
                     echo "</table><br>";
                 }
 
-                function sumaFilas(){
-                    $filas = array();
+                function analizarCuadrado(){
+                    $comprobador = true;
+                    $arrayFilas = array();
+                    $arrayColumnas = array();
+
                     for ($i=0; $i < count($this->array); $i++) { 
                         if (array_sum($this->array[$i]) != 15) {
-                            $filas[$i] = "false";
-                            echo "Filas ",$i ,"=", $filas[$i], "<br>";
+                            $arrayFilas[$i] = "false";
+                            $comprobador = false;
                         }else{
-                            $filas[$i] = "true";
-                            echo "Filas ",$i ,"=", $filas[$i], "<br>";
+                            $arrayFilas[$i] = "true";
                         }
-                        
+                    }
+                    $resultado = 0;
+                    $i = 0;
+                    $j = 0;
+
+                    while($j < 3){
+                        $resultado = $resultado + $this->array[$j][$i];
+                        if($resultado == 15){
+                            $arrayColumnas[$i] = "true";
+                        }else{
+                            $arrayColumnas[$i] = "false";
+                        }
+                        $j++;
+                    }
+                    echo $arrayColumnas[0];    
+
+                    if($comprobador != true){
+                        echo "<h2>NO ES UN CUADRADO</h2>";
+                        echo "Las filas diferentes a 15 son<br><br>";
+                        for ($i=0; $i < count($arrayFilas); $i++) { 
+                            if ($arrayFilas[$i] != "true") {
+                                echo "Fila ", $i+1, "<br>";
+                                
+                            }
+                        }
                     }
                 }
 
 
                 // Tests
-                function test_sumaFila_1(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[0][$i];
-                    }
-                    if($resultado == 15){
-                       echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
-                       return true;
-                    }else{
-                       echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
-                       return false;
-                    }
+                // function test_sumaFila_1(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[0][$i];
+                //     }
+                //     if($resultado == 15){
+                //        echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
+                //        return true;
+                //     }else{
+                //        echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
+                //        return false;
+                //     }
                               
-                }
-                function test_sumaFila_2(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[1][$i];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaFila_2 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaFila_2 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                // }
+                // function test_sumaFila_2(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[1][$i];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaFila_2 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaFila_2 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
-                function test_sumaFila_3(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[2][$i];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaFila_3 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaFila_3 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                // }
+                // function test_sumaFila_3(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[2][$i];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaFila_3 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaFila_3 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
-                function test_sumaColumna_1(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[$i][0];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                // }
+                // function test_sumaColumna_1(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[$i][0];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
-                function test_sumaColumna_2(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[$i][1];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaColumna_2 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaColumna_2 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                // }
+                // function test_sumaColumna_2(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[$i][1];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaColumna_2 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaColumna_2 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
-                function test_sumaColumna_3(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[$i][2];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaColumna_3 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaColumna_3 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                // }
+                // function test_sumaColumna_3(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[$i][2];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaColumna_3 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaColumna_3 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
-                function test_sumaDiagonal_1(){
+                // }
+                // function test_sumaDiagonal_1(){
                     
-                    $resultado = 0;
-                    $i = 0;
-                    $j = 2;
-                    while($i < 3){
-                        $resultado += $this->array[$i][$j];
-                        $j--;
-                        $i++;
-                    }
+                //     $resultado = 0;
+                //     $i = 0;
+                //     $j = 2;
+                //     while($i < 3){
+                //         $resultado += $this->array[$i][$j];
+                //         $j--;
+                //         $i++;
+                //     }
 
-                    if($resultado == 15){
-                        echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
-                        return true;
-                    }else{
-                        echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }                         
-                }
-                function test_sumaDiagonal_2(){
-                    $resultado = 0;
-                    for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = $resultado + $this->array[$i][$i];
-                    }
-                    if($resultado == 15){
-                        echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
-                        return false;
-                    }else{
-                        echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
-                        return false;
-                    }
+                //     if($resultado == 15){
+                //         echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
+                //         return true;
+                //     }else{
+                //         echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }                         
+                // }
+                // function test_sumaDiagonal_2(){
+                //     $resultado = 0;
+                //     for ($i=0; $i < count($this->array); $i++) { 
+                //         $resultado = $resultado + $this->array[$i][$i];
+                //     }
+                //     if($resultado == 15){
+                //         echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
+                //         return false;
+                //     }else{
+                //         echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
+                //         return false;
+                //     }
                               
-                }
+                // }
                 
             }
             
@@ -173,16 +199,16 @@
                                             array(3,5,7),
                                             array(8,1,6),));
             $tablero_1 -> pintarCuadradoMagico();
-            $tablero_1 -> sumaFilas();
+            $tablero_1 -> analizarCuadrado();
             //Probar Tests
-            $tablero_1 -> test_sumaFila_1();
-            $tablero_1 -> test_sumaFila_2();
-            $tablero_1 -> test_sumaFila_3();
-            $tablero_1 -> test_sumaColumna_1();
-            $tablero_1 -> test_sumaColumna_2();
-            $tablero_1 -> test_sumaColumna_3();
-            $tablero_1 -> test_sumaDiagonal_1();
-            $tablero_1 -> test_sumaDiagonal_2();
+            // $tablero_1 -> test_sumaFila_1();
+            // $tablero_1 -> test_sumaFila_2();
+            // $tablero_1 -> test_sumaFila_3();
+            // $tablero_1 -> test_sumaColumna_1();
+            // $tablero_1 -> test_sumaColumna_2();
+            // $tablero_1 -> test_sumaColumna_3();
+            // $tablero_1 -> test_sumaDiagonal_1();
+            // $tablero_1 -> test_sumaDiagonal_2();
         ?>
     </div>
 </body>

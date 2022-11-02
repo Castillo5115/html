@@ -1,5 +1,5 @@
-.codigo{
-    width: 100%;
+body{
+    font-family: Arial, Helvetica, sans-serif;
 }
 .tablero,td{
     border: 1px solid black;
@@ -7,5 +7,12 @@
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    margin: auto;
+}
+.cabecera{
+    text-align: center;
 }
 
+h2{
+    color: red;
+}
