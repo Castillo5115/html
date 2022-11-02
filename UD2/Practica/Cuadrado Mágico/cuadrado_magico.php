@@ -249,9 +249,7 @@
                                             array(3,5,7),
                                             array(8,1,6)));
             $tablero_1 -> pintarCuadradoMagico();
-            $tablero_1 -> analizarCuadradoMagico();
-            //Probar Tests
-            
+            $tablero_1 -> analizarCuadradoMagico();            
         ?>
     </div>
 </body>
