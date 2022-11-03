@@ -173,7 +173,7 @@
                         $resultado = $resultado + $this->array[$i][0];
                     }
                     if($resultado == 15){
-                        echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
+                        echo "<br>test_sumaColumna_1 = " , $resultado, " -> OK<br>";
                         
                     }else{
                         echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
@@ -250,14 +250,6 @@
                                             array(8,1,6)));
             $tablero_1 -> pintarCuadradoMagico();
             $tablero_1 -> analizarCuadradoMagico();
-            
-            $tablero_2 = new Tablero(array(array(4,9,2,3,2),
-                                            array(3,5,7,5,6),
-                                            array(8,1,6,3,1),
-                                            array(4,1,2,3,5)));
-            $tablero_2 -> pintarCuadradoMagico();
-            $tablero_2 -> analizarCuadradoMagico();
-
         ?>
     </div>
 </body>
