@@ -66,11 +66,11 @@
                     }
                     // Analizar diagonal 1
 
+                    $resultadoDiagonal_1 = 0;
                     for ($i=0; $i < count($this->array); $i++) { 
-                        $resultado = 0;
-                        $resultado = $resultado + $this->array[$i][$i];
+                        $resultadoDiagonal_1 = $resultadoDiagonal_1 + $this->array[$i][$i];
                     }
-                    if ($resultado != 15) {
+                    if ($resultadoDiagonal_1 != 15) {
                         $arrayDiagonales[0] = "false";
                     }else {
                         $arrayDiagonales[0] = "true";
@@ -78,16 +78,16 @@
 
                     // Analizar diagonal 2
 
-                    $resultado = 0;
+                    $resultadoDiagonal_2 = 0;
                     $i = 0;
                     $j = 2;
-                    while($i < 3){
-                        $resultado += $this->array[$i][$j];
+                    while($i < count($this->array)){
+                        $resultadoDiagonal_2 += $this->array[$i][$j];
                         $j--;
                         $i++;
                     }
 
-                    if($resultado != 15){
+                    if($resultadoDiagonal_2 != 15){
                         $arrayDiagonales[1] = "false";
                         $comprobador = false;
                     }else{
@@ -100,21 +100,21 @@
                         echo "Las filas diferentes a 15 son<br><br>";
                         for ($i=0; $i < count($arrayFilas); $i++) { 
                             if ($arrayFilas[$i] != "true") {
-                                echo "Fila ", $i+1, "<br>";
+                                echo "Fila ", $i, "<br>";
                                 
                             }
                         }
                         echo "<br>Las columnas diferentes a 15 son<br><br>";
                         for ($i=0; $i < count($arrayColumnas); $i++) { 
                             if ($arrayColumnas[$i] != "true") {
-                                echo "Columna ", $i+1, "<br>";
+                                echo "Columna ", $i, "<br>";
                                 
                             }
                         }
                         echo "<br>Las diagonales diferentes a 15 son<br><br>";
                         for ($i=0; $i < count($arrayDiagonales); $i++) { 
                             if ($arrayDiagonales[$i] != "true") {
-                                echo "Diagonal ", $i+1, "<br>";
+                                echo "Diagonal ", $i, "<br>";
                                 
                             }
                         }
@@ -132,10 +132,10 @@
                     }
                     if($resultado == 15){
                        echo "test_sumaFila_1 = " , $resultado, " -> OK<br>";
-                       return true;
+                       
                     }else{
                        echo "test_sumaFila_1 = " , $resultado, " -> KO<br>";
-                       return false;
+                       
                     }
                               
                 }
@@ -146,10 +146,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaFila_2 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaFila_2 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -160,10 +160,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaFila_3 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaFila_3 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -174,10 +174,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_1 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaColumna_1 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -188,10 +188,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_2 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaColumna_2 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -202,10 +202,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaColumna_3 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaColumna_3 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -222,10 +222,10 @@
 
                     if($resultado == 15){
                         echo "test_sumaDiagonal_1 = " , $resultado, " -> OK<br>";
-                        return true;
+                        
                     }else{
                         echo "test_sumaDiagonal_1 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }                         
                 }
                 function test_sumaDiagonal_2(){
@@ -235,10 +235,10 @@
                     }
                     if($resultado == 15){
                         echo "test_sumaDiagonal_2 = " , $resultado, " -> OK<br>";
-                        return false;
+                        
                     }else{
                         echo "test_sumaDiagonal_2 = " , $resultado, " -> KO<br>";
-                        return false;
+                        
                     }
                               
                 }
@@ -249,7 +249,15 @@
                                             array(3,5,7),
                                             array(8,1,6)));
             $tablero_1 -> pintarCuadradoMagico();
-            $tablero_1 -> analizarCuadradoMagico();            
+            $tablero_1 -> analizarCuadradoMagico();
+            
+            $tablero_2 = new Tablero(array(array(4,9,2,3,2),
+                                            array(3,5,7,5,6),
+                                            array(8,1,6,3,1),
+                                            array(4,1,2,3,5)));
+            $tablero_2 -> pintarCuadradoMagico();
+            $tablero_2 -> analizarCuadradoMagico();
+
         ?>
     </div>
 </body>
