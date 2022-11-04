@@ -14,15 +14,17 @@
 .primera_columna{
     float:left;
     height: 100%;
-    width:50%;
+    width:25%;
     background-color: green;
+    color: white;
 
 }
 .segunda_columna{
     float:left;
     height: 100%;
-    width:50%;
+    width:75%;
     background-color: darkblue;
+    color: white;
 }
 
 .contenedor{
