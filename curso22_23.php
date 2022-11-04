@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esto es el titulo</title>
     <link rel="stylesheet" href="estilos.css">
-    <title>Curso 2022 2023</title>
 </head>
 <body>
-    <div class="cabecera">Parrafo</div>
-    <div class="izquierda">
-        <ul>
-            <li>Index.html</li>
-            <li>Página_1.html</li>
-            <li>Página_2.html</li>
-        </ul>
-    </div>
-    <div class="central"></div>
-    <div class="derecha"></div>
+    <div class="contenedor">
+        <div class="primera_caja">
+            <a href="index.html">INICIO</a>
+            <a href="pagina1.html">Primera página</a>
+            <a href="pagina2.html">Segunda página</a>
+        </div>
+        <div class="segunda_caja">
+
+            <div class="primera_columna">aa</div>
+            <div class="segunda_columna">assas</div>
+
+        </div>
+        <div class="tercera_caja">ccc</div>
+    <div>
 </body>
 </html>
