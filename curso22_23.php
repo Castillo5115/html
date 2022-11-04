@@ -8,6 +8,15 @@
     <title>Curso 2022 2023</title>
 </head>
 <body>
-    <h1>Hola</h1>
+    <div class="cabecera">Parrafo</div>
+    <div class="izquierda">
+        <ul>
+            <li>Index.html</li>
+            <li>Página_1.html</li>
+            <li>Página_2.html</li>
+        </ul>
+    </div>
+    <div class="central"></div>
+    <div class="derecha"></div>
 </body>
 </html>
