@@ -12,7 +12,7 @@
         </div>
         <div class="segunda_caja">
 
-            <div class="primera_columna">aa</div>
+            <div class="primera_columna"></div>
             <div class="segunda_columna">
                 <?php
                     function factorial($numero){
