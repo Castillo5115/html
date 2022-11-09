@@ -13,7 +13,18 @@
         <div class="segunda_caja">
 
             <div class="primera_columna">aa</div>
-            <div class="segunda_columna">assas</div>
+            <div class="segunda_columna">
+                <?php
+                    function factorial($numero){
+                        $factorial = 1;
+                        for ($i=1; $i <= $numero; $i++) { 
+                            $factorial = $factorial * $i;
+                        }
+                        echo $factorial;
+                    }
+                    factorial(5);
+                ?>
+            </div>
 
         </div>
         <div class="tercera_caja">ccc</div>
