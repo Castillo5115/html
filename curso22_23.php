@@ -12,18 +12,14 @@
         </div>
         <div class="segunda_caja">
 
-            <div class="primera_columna"></div>
+            <div class="primera_columna">aa</div>
             <div class="segunda_columna">
-                <?php
-                    function factorial($numero){
-                        $factorial = 1;
-                        for ($i=1; $i <= $numero; $i++) { 
-                            $factorial = $factorial * $i;
-                        }
-                        echo $factorial;
-                    }
-                    factorial(5);
-                ?>
+                <ul>
+                    <li><div class="pelicula">aa
+                        <img src="img/3.jpg" alt="El resplandor">
+                    </div></li>
+                </ul>
+               
             </div>
 
         </div>
