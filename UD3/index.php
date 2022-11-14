@@ -12,11 +12,28 @@
         </div>
         <div class="segunda_caja">
 
-            <div class="primera_columna">aa</div>
-            <div class="segunda_columna"></div>
+            <div class="primera_columna"></div>
+            <div class="segunda_columna">
+                <div class="listado_peliculas">
+                    <div class="peliculas">
+                        <div class="imagen">
+                            <img src="img/1.jpg" alt="cartel resplandor">
+                        </div>
+                        <div class="titulo_descrpicion">
+                            
+                        </div>
+                        <div class="enlace">
+
+                        </div>
+                    </div>
+                    <div class="peliculas">
+                        
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="tercera_caja">ccc</div>
+        <div class="tercera_caja"></div>
     <div>
 </body>
 </html>
