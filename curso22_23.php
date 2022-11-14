@@ -13,14 +13,7 @@
         <div class="segunda_caja">
 
             <div class="primera_columna">aa</div>
-            <div class="segunda_columna">
-                <ul>
-                    <li><div class="pelicula">aa
-                        <img src="img/3.jpg" alt="El resplandor">
-                    </div></li>
-                </ul>
-               
-            </div>
+            <div class="segunda_columna"></div>
 
         </div>
         <div class="tercera_caja">ccc</div>

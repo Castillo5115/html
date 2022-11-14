@@ -25,6 +25,7 @@
     width:75%;
     background-color: darkblue;
     color: white;
+    list-style: none;
 }
 
 .contenedor{
@@ -33,10 +34,12 @@
     width: 100%;
 }
 .pelicula{
-    width: 100%;
     margin: 3px;
     border: 1px solid white;
 }
+li{
+    width: 100%;
+}
 img{
-    width: 10px;
+    width: 20pxpx;
 }
