@@ -48,17 +48,23 @@
 }
 
 .imagen{
-    height: 50%;
+    height: 100%;
     width: 27%;
     border: 1px solid red;
+    float: left;
 }
 
-.titulo_descripcion{
-    
+.titulo{
+    float: left;
+    height: 100%;
+    background-color: blue;
+
 }
 
-.enlaces{
-
+.enlace{
+    float: right;
+    height: 100%;
+    width: 12%;
 }
 img{
     height: 100%;

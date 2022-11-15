@@ -19,15 +19,10 @@
                         <div class="imagen">
                             <img src="img/1.jpg" alt="cartel resplandor">
                         </div>
-                        <div class="titulo_descrpicion">
-                            
+                        <div class="titulo">
                         </div>
                         <div class="enlace">
-
                         </div>
-                    </div>
-                    <div class="peliculas">
-                        
                     </div>
                 </div>
             </div>
