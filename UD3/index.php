@@ -6,9 +6,10 @@
 <body>
     <div class="contenedor">
         <div class="primera_caja">
-            <a href="index.html">INICIO</a>
-            <a href="pagina1.html">Primera página</a>
-            <a href="pagina2.html">Segunda página</a>
+            <a class ="links" href="index.html">INICIO</a>
+            <a class ="links" href="pagina1.html">Primera página</a>
+            <a class ="links" href="pagina2.html">Segunda página</a>
+            <h1>Cartelera</h1>
         </div>
         <div class="segunda_caja">
                 <div class="listado_peliculas">
