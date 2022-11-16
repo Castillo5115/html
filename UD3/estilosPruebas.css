@@ -1,0 +1,80 @@
+* {margin: 0px; padding: 0px;font-family: Arial, Helvetica, sans-serif;} /* margin es el margen exterior. padding, margen interior */
+
+.contendor{
+    height: 100vh;
+    width: 100vw;
+}
+/*===============*/
+.encabezado{
+    background-color: lightcoral;
+    width: 100vw;
+    height: 25vh;
+}
+#links{
+    padding: 12px;
+}
+.link{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+
+}
+#titulo{
+    
+    padding-top: 50px;
+    text-align: center;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.05em rgb(107, 107, 107);
+}
+/*===============*/
+.listado_peliculas{
+    margin-top: 2%;
+    width: 100vw;
+    height: 75vh;
+}
+.pelicula{
+    background-color: lightgrey;
+    width: 75%;
+    height: 35%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-bottom: 1px;
+}
+.imagen{
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+#resplandor{
+    width: 40%;
+    height: 75%;
+    margin-left: 28%;
+    margin-top: 10%;
+}
+.descripcion{
+    float: left;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+}
+.enlace{
+    float: left;
+    text-align: center ;
+    height: 100%;
+    width: 25%;
+}
+.ficha{
+    float: left;
+    margin-top: 37%;
+    margin-left: 40%;
+
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 4px;
+    padding: 3px;
+}
