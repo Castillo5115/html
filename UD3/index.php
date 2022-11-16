@@ -32,18 +32,14 @@
                     <a href="" class="ficha">Ver Ficha</a>
                 </div>
             </div>
-            <div class="pelicula">
-                <div class="imagen">
-                    <img id="resplandor" src="img/1.jpg" alt="El Resplandor">
-                </div>
-                <div class="descripcion">
-                    <h3>El resplandor</h3>
-                </div>
-                <div class="enlace">
-                    <a href="" class="ficha">Ver Ficha</a>
-                </div>
-            </div>
+            
             <?php
+                class Pelicula{
+                    function pintarPeliculas(){
+
+                       
+                    }
+                }
             ?>
         </div>        
     </div>
