@@ -23,11 +23,11 @@
             <?php
                 class Pelicula{
                     function pintarPeliculas(){
-                        $imgPeliculas = array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","11.jpg");
+                        $imgPeliculas = array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg");
                         for ($i=0; $i < count($imgPeliculas); $i++) { 
                             echo "<div class=\"pelicula\">";
                             echo"<div class=\"imagen\">";
-                                echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\""," alt=\"Imagen película\">";
+                                echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\" alt=\"Imagen película\">";
                             echo"</div>";
                             echo"<div class=\"descripcion\">";
                                 echo"<h3>Título</h3>";
