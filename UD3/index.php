@@ -12,34 +12,35 @@
         <div class="encabezado">
             <div id="links">
                 <a href="indexPruebas.html" class="link">INICIO</a>
-                <a href="indexPruebas.html" class="link">pag.1</a>
-                <a href="indexPruebas.html" class="link">pag.2</a>
+                <a href="indexPruebas.html" class="link">Terror</a>
+                <a href="indexPruebas.html" class="link">Spielberg</a>
             </div>
             <div id="titulo">
                 <h1>Cartelera AFICINE</h1>
             </div>
         </div>
-        <div class="listado_peliculas">
-
-            <div class="pelicula">
-                <div class="imagen">
-                    <img id="resplandor" src="img/1.jpg" alt="El Resplandor">
-                </div>
-                <div class="descripcion">
-                    <h3>El resplandor</h3>
-                </div>
-                <div class="enlace">
-                    <a href="" class="ficha">Ver Ficha</a>
-                </div>
-            </div>
-            
+        <div class="listado_peliculas">            
             <?php
                 class Pelicula{
                     function pintarPeliculas(){
-
-                       
+                        $imgPeliculas = array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","11.jpg");
+                        for ($i=0; $i < count($imgPeliculas); $i++) { 
+                            echo "<div class=\"pelicula\">";
+                            echo"<div class=\"imagen\">";
+                                echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\""," alt=\"Imagen película\">";
+                            echo"</div>";
+                            echo"<div class=\"descripcion\">";
+                                echo"<h3>Título</h3>";
+                            echo"</div>";
+                            echo"<div class=\"enlace\">";
+                                echo"<a href=\"\" class=\"ficha\">Ver Ficha</a>";
+                            echo"</div>";
+                        echo"</div>";    
+                        }
                     }
                 }
+                $peliculas = new Pelicula();
+                $peliculas -> pintarPeliculas();
             ?>
         </div>        
     </div>
