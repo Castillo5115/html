@@ -22,11 +22,12 @@ body{
 /*===============*/
 .listado_peliculas{
     background-color: lightgrey;
-    padding-top: 2%;
     width: 100vw;
     height: 75vh;
 }
-#terror{
+.categoria{
+    background-color: green;
+    float:left;
     width: 50%;
+    height: 100%;
 }
-#spielberg{}

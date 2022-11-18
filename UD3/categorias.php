@@ -17,8 +17,12 @@
             </div>
         </div>
         <div class="listado_peliculas">            
-            <div id="terror"></div>
-            <div id="spielberg"></div>
+            <div class="categoria">
+                <h1>Terror</h1>
+            </div>       
+            <div class="categoria">
+                <h1>Sci-fi</h1>
+            </div>
         </div>        
     </div>
 </body>
