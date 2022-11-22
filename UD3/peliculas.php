@@ -12,8 +12,6 @@
         <div class="encabezado">
             <div id="links">
                 <a href="categorias.php" class="link">INICIO</a>
-                <a href="index.php" class="link">Terror</a>
-                <a href="index.php" class="link">Spielberg</a>
             </div>
             <div id="titulo">
                 <h1>Cartelera AFICINE</h1>

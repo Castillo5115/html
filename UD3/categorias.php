@@ -13,17 +13,22 @@
             <div id="links">
             </div>
             <div id="titulo">
-                <h1>Cartelera AFICINE</h1>
+                <img src="img/logo.jpeg" alt="">
             </div>
         </div>
         <div class="listado_peliculas">            
+            <?php
+            ?>
             <div class="categoria">
-                <h1>Terror</h1>
-            </div>       
-            <div class="categoria">
-                <h1>Sci-fi</h1>
+                <h1 class="titulo">Terror</h1>
+                <div class="img"><a href="peliculas.php"><img id="terror" src="img/terror.png" alt="Categoria Terror"></a></div>               
             </div>
-        </div>        
+            <div class="categoria">
+                <h1 class="titulo">Ciencia Ficcion</h1>
+                <div class="img"><a href="peliculas.php"><img id="terror" src="img/sci-fi.png" alt="Categoria Ciencia Ficcion"></a></div>               
+            </div>
+            
+        </div>     
     </div>
 </body>
 </html>
