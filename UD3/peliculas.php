@@ -10,11 +10,9 @@
 <body>
     <div class="contenedor">
         <div class="encabezado">
-            <div id="links">
-                <a href="categorias.php" class="link">INICIO</a>
-            </div>
             <div id="titulo">
-                <h1>Cartelera AFICINE</h1>
+               
+                <a href="categorias.php"><img class="logo" src="img/logo.jpeg" alt=""></a>
             </div>
         </div>
         <div class="listado_peliculas">            
@@ -22,13 +20,14 @@
                 class Pelicula{
                     function pintarPeliculas(){
                         $imgPeliculas = array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg");
+                        $tituloPeliculas = array("IT", "SCREAM", "Expediente Warren", "Smile", "Annabelle", "Rings", "Nosotros", "IT Capitulo_2", "Vienes 13", "El Resplandor");
                         for ($i=0; $i < count($imgPeliculas); $i++) { 
                             echo "<div class=\"pelicula\">";
                             echo"<div class=\"imagen\">";
                                 echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\" alt=\"Imagen película\">";
                             echo"</div>";
                             echo"<div class=\"descripcion\">";
-                                echo"<h3>Título</h3>";
+                                echo"<h3>",$tituloPeliculas[$i],"</h3>";
                             echo"</div>";
                             echo"<div class=\"enlace\">";
                                 echo"<a href=\"\" class=\"ficha\">Ver Ficha</a>";
