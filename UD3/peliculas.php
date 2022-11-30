@@ -11,47 +11,58 @@
     <div class="contenedor">
         <div class="encabezado">
             <div id="titulo">
-               
                 <a href="categorias.php"><img class="logo" src="img/logo.jpeg" alt=""></a>
             </div>
         </div>
         <div class="listado_peliculas">            
             <?php
-                # Conexion a MySql.  
-
                 class Pelicula{
-                    // function __construct($id, $titulo, $duracionMin, $votos, $id_categoria){
-                    //     $this->id = $id;
-                    //     $this->titulo = $titulo;
-                    //     $this->duracionMin = $duracionMin;
-                    //     $this->votos = $votos;
-                    //     $this->id_categoria = $id_categoria;
-                    // }
-                    function pintarPeliculas(){
-                        //Conexion mysql
-                        
+                    function __construct(){
+                    }
+
+                    
+                    function init($id, $titulo, $duracionMin, $votos, $id_categoria){
+                        $this->id = $id;
+                        $this->titulo = $titulo;
+                        $this->duracionMin = $duracionMin;
+                        $this->votos = $votos;
+                        $this->id_categoria = $id_categoria;
+                    }
+                    // Conexion a mysql
+                    function dameDatos($id_categoria){
                         $conexion = mysqli_connect('localhost', 'root', '12345');
                         mysqli_select_db($conexion, 'aficine');
-                        $consulta = "SELECT * FROM Pelicula";
+                        $consulta = "SELECT * FROM Pelicula WHERE id_categoria = '$id_categoria'";
                         $resultado = mysqli_query($conexion, $consulta);
                         if (!$resultado) {
                             $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
                             $mensaje .= 'Consulta realizada: ' . $consulta;
                             die($mensaje);
                         }else{
-                            while ($registro = mysqli_fetch_assoc($resultado)) {
-                                echo  $registro['titulo']. "<br>";
+                            $i = 0;
+                            $arrayPeliculas = array();
+                            while ($conatador < $registro = mysqli_fetch_assoc($resultado)) {
+
+                                $p = new Pelicula();
+                                $arrayPeliculas = $p -> init($registro['id'], $registro['titulo'], $registro['duracionMin'], $registro['votos'], $registro['id_categoria']);
+                                
+                                        $i++;
                             }
+                            return $arrayPeliculas;
                         }
+                    }
+
+                    function pintarPeliculas(){
+                        
                 
                         
                         //Mostrar datos                            
                         // $tituloPeliculas = array("IT", "SCREAM", "Expediente Warren", "Smile", "Annabelle", "Rings", "Nosotros", "IT Capitulo_2", "Vienes 13", "El Resplandor");
                         // for ($i=0; $i < count($imgPeliculas); $i++) { 
-                        //     echo "<div class=\"pelicula\">";
-                        //     echo"<div class=\"imagen\">";
-                        //         echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\" alt=\"Imagen película\">";
-                        //     echo"</div>";
+                        //  echo "<div class=\"pelicula\">";
+                            //     echo"<div class=\"imagen\">";
+                            //         echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\" alt=\"Imagen película\">";
+                            //     echo"</div>";
                         //     echo"<div class=\"descripcion\">";
                            
                         //         echo"<h3>",$tituloPeliculas[$i],"</h3>";
@@ -66,8 +77,9 @@
                 }
                 
                 
-                $peliculas = new Pelicula();
-                $peliculas -> pintarPeliculas();
+                $p = new Pelicula;
+                $datos = $p -> dameDatos("terror");
+                $p -> pintarPeliculas();
             ?>
         </div>        
     </div>
