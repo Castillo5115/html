@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="estilos.css"> -->
-    <title>Document</title>
+    <title>Peliculas - Aficine</title>
 </head>
 <body>
     <div class="contenedor">
@@ -44,8 +44,7 @@
                             while ($conatador < $registro = mysqli_fetch_assoc($resultado)) {
 
                                 $p = new Pelicula();
-                                $arrayPeliculas = $p -> init($registro['id'], $registro['titulo'], $registro['duracionMin'], $registro['votos'], $registro['id_categoria']);
-                                
+                                $arrayPeliculas[$i] = $p -> init($registro['id'], $registro['titulo'], $registro['duracionMin'], $registro['votos'], $registro['id_categoria']);
                                         $i++;
                             }
                             return $arrayPeliculas;
