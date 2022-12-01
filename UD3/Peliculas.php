@@ -53,25 +53,6 @@
 
                     function pintarPeliculas(){
                         
-                
-                        
-                        //Mostrar datos                            
-                        // $tituloPeliculas = array("IT", "SCREAM", "Expediente Warren", "Smile", "Annabelle", "Rings", "Nosotros", "IT Capitulo_2", "Vienes 13", "El Resplandor");
-                        // for ($i=0; $i < count($imgPeliculas); $i++) { 
-                        //  echo "<div class=\"pelicula\">";
-                            //     echo"<div class=\"imagen\">";
-                            //         echo"<img id=\"resplandor\" src=\"img/",$imgPeliculas[$i],"\" alt=\"Imagen película\">";
-                            //     echo"</div>";
-                        //     echo"<div class=\"descripcion\">";
-                           
-                        //         echo"<h3>",$tituloPeliculas[$i],"</h3>";
-                            
-                               
-                        //     echo"</div>";
-                        //     echo"<div class=\"enlace\">";
-                        //         echo"<a href=\"\" class=\"ficha\">Ver Ficha</a>";
-                        //     echo"</div>";
-                        // echo"</div>";    
                     }
                 }
                 
