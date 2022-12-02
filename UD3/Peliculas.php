@@ -46,13 +46,15 @@
                             $arrayPeliculas = array();
 
                             while ($registro = mysqli_fetch_assoc($resultado)) {
-                                echo "Hola";
+                                
                                 $p = new Pelicula();
                                 echo $registro['titulo'];
 
+                                $id = $registro['id'];
                                 $titulo = $registro['titulo'];
 
-                                $p->init('$id', $titulo, '$duracionMin', '$votos', '$id_categoria');
+
+                                $p->init($id, $titulo, '$duracionMin', '$votos', '$id_categoria');
 
                                 var_dump($p);
                                 // $arrayPeliculas[$i] = $p->init($registro['titulo']);
