@@ -22,9 +22,6 @@
 
                     
                     function init($id, $titulo, $duracionMin, $votos, $id_categoria){
-
-
-                        
                         $this->id = $id;
                         $this->titulo = $titulo;
                         $this->duracionMin = $duracionMin;
@@ -44,31 +41,33 @@
                         }else{
                             $i = 0;
                             $arrayPeliculas = array();
-
                             while ($registro = mysqli_fetch_assoc($resultado)) {
                                 
                                 $p = new Pelicula();
-                                echo $registro['titulo'];
 
                                 $id = $registro['id'];
                                 $titulo = $registro['titulo'];
+                                $duracionMin = $registro['duracionMin'];
+                                $votos = $registro['votos'];
+                                $id_categoria = $registro['id_categoria'];
 
-
-                                $p->init($id, $titulo, '$duracionMin', '$votos', '$id_categoria');
-
-                                var_dump($p);
-                                // $arrayPeliculas[$i] = $p->init($registro['titulo']);
+                                $arrayPeliculas[$i] = array($id, $titulo, $duracionMin, $votos, $id_categoria);
+                                // $arrayPeliculas[$i] = $p->init($id, $titulo, $duracionMin, $votos, $id_categoria);
                                 $i++;
                             
                             }
-                            var_dump($arrayPeliculas);
+
+                            for ($i=0; $i < count($arrayPeliculas); $i++) { 
+                                echo $arrayPeliculas[$i][1] . "<br>";
+                            }
+
+                            return $arrayPeliculas;
                         }
                     }
 
                     function pintarPeliculas(){
                         
                     }
-
 
                 }
                 
