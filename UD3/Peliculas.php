@@ -21,12 +21,13 @@
                     }
 
                     
-                    function init($id, $titulo, $duracionMin, $votos, $id_categoria){
+                    function init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion){
                         $this->id = $id;
                         $this->titulo = $titulo;
                         $this->duracionMin = $duracionMin;
                         $this->votos = $votos;
                         $this->id_categoria = $id_categoria;
+                        $this->descripcion = $descripcion;
                     }
                     // Conexion a mysql
                     function dameDatos( ){
@@ -50,30 +51,39 @@
                                 $duracionMin = $registro['duracionMin'];
                                 $votos = $registro['votos'];
                                 $id_categoria = $registro['id_categoria'];
+                                $descripcion = $registro['descripcion'];
 
-                                $arrayPeliculas[$i] = array($id, $titulo, $duracionMin, $votos, $id_categoria);
+                                $p -> init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion);
+                                array_push($arrayPeliculas, $p);
                                 // $arrayPeliculas[$i] = $p->init($id, $titulo, $duracionMin, $votos, $id_categoria);
                                 $i++;
                             
                             }
-
-                            for ($i=0; $i < count($arrayPeliculas); $i++) { 
-                                echo $arrayPeliculas[$i][1] . "<br>";
-                            }
-
                             return $arrayPeliculas;
                         }
                     }
 
-                    function pintarPeliculas(){
+                    function pintar(){
                         
+                    }
+
+                    function pintarPeliculas(){
+                        $v = dameDatos();
+                        $v[0] -> pintar();
+                        // echo "<div class=\"pelicula\" >";
+                        //     echo "<div class=\"imagen\">";
+                        //         echo "<img id =\"resplandor\" src=\"img/1.jpg\" alt=\"Imagen Pelicula\">";
+                        //     echo "</div>";
+                        //     echo "<div class=\"descripcion\">";
+                        //     echo "</div>";
+                        // echo "</div>";
                     }
 
                 }
                 
                 
                 $p = new Pelicula;
-                $p -> pintarPeliculas();
+                // $p -> pintarPeliculas();
                 $p -> dameDatos();
             ?>
         </div>        
