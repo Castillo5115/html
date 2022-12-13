@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="estilos.css"> -->
+    <link rel="stylesheet" href="estilos.css">
     <title>Peliculas - Aficine</title>
 </head>
 <body>
     <div class="contenedor">
         <div class="encabezado">
             <div id="titulo">
-                <a href="categorias.php"><img class="logo" src="img/logo.jpeg" alt=""></a>
+                <a href="Categorias.php"><img class="logo" src="img/logo.jpeg" alt=""></a>
             </div>
         </div>
         <div class="listado_peliculas">            
@@ -29,11 +29,36 @@
                         $this->id_categoria = $id_categoria;
                         $this->descripcion = $descripcion;
                     }
+
+                    function getId(){
+                        return $this -> id;
+                    }
+
+                    function getTitulo(){
+                        return $this -> titulo;
+                    }
+
+                    function getDuracionMin(){
+                        return $this -> duracionMin;
+                    }
+
+                    function getVotos(){
+                        return $this -> votos;
+                    }
+
+                    function getIdCategoria(){
+                        return $this -> id_categoria;
+                    }
+
+                    function getDescripcion(){
+                        return $this -> descripcion;
+                    }
+
                     // Conexion a mysql
-                    function dameDatos( ){
+                    function dameDatos(){
                         $conexion = mysqli_connect('localhost', 'root', '12345');
                         mysqli_select_db($conexion, 'aficine');
-                        $consulta = "SELECT * FROM Pelicula";
+                        $consulta = "SELECT * FROM Pelicula WHERE id_categoria='terror'";
                         $resultado = mysqli_query($conexion, $consulta);
                         if (!$resultado) {
                             $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
@@ -55,7 +80,6 @@
 
                                 $p -> init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion);
                                 array_push($arrayPeliculas, $p);
-                                // $arrayPeliculas[$i] = $p->init($id, $titulo, $duracionMin, $votos, $id_categoria);
                                 $i++;
                             
                             }
@@ -64,29 +88,32 @@
                     }
 
                     function pintar(){
-                        
-                    }
+                        $arrayDatos = $this -> dameDatos();
 
-                    function pintarPeliculas(){
-                        $v = dameDatos();
-                        $v[0] -> pintar();
-                        // echo "<div class=\"pelicula\" >";
-                        //     echo "<div class=\"imagen\">";
-                        //         echo "<img id =\"resplandor\" src=\"img/1.jpg\" alt=\"Imagen Pelicula\">";
-                        //     echo "</div>";
-                        //     echo "<div class=\"descripcion\">";
-                        //     echo "</div>";
-                        // echo "</div>";
+                        foreach ($arrayDatos as $pelicula) {
+                            echo "<div class=\"pelicula\" >";
+                                echo "<div class=\"imagen\">";
+                                    echo "<img id =\"resplandor\" src=\"img/".$pelicula->getId().".jpg\" alt=\"Imagen Pelicula\">";
+                                echo "</div>";
+                                echo "<div class=\"descripcion\">";
+                                    echo "<h1>".$pelicula->getTitulo()."</h1>";
+                                    echo $pelicula->getDescripcion(); 
+                                echo "</div>";
+                                echo "<div class=\"enlace\">";
+                                    echo"<a href=\"Ficha.php\" class=\"ficha\">Ver Ficha</a>";
+                                echo"</div>";
+                            echo "</div>";
+                        }
                     }
-
                 }
                 
                 
                 $p = new Pelicula;
-                // $p -> pintarPeliculas();
                 $p -> dameDatos();
+                $p -> pintar();
             ?>
-        </div>        
+        </div>
+             
     </div>
 </body>
 </html>
