@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <?php
+    
+        $genero = $_GET['genero'];
+        if ($genero == "terror") {
+            echo "<link rel=\"stylesheet\" href=\"estilos.css\">";
+        }else if($genero == "sci-fi"){
+            echo "<link rel=\"stylesheet\" href=\"cssSci-Fi.css\">";
+        }
+    
+    ?>
+    
     <title>Peliculas - Aficine</title>
 </head>
 <body>
     <div class="contenedor">
         <div class="encabezado">
             <div id="titulo">
-                <a href="Categorias.php"><img class="logo" src="img/logo.jpeg" alt=""></a>
+                <a href="Categorias.php"><img class="logo" src="img/logo.jpeg" alt="Logo Aficine"></a>
             </div>
         </div>
         <div class="listado_peliculas">            
@@ -56,9 +66,12 @@
 
                     // Conexion a mysql
                     function dameDatos(){
+                        
+                        $genero = $_GET["genero"];
+
                         $conexion = mysqli_connect('localhost', 'root', '12345');
                         mysqli_select_db($conexion, 'aficine');
-                        $consulta = "SELECT * FROM Pelicula WHERE id_categoria='terror'";
+                        $consulta = "SELECT * FROM Pelicula WHERE id_categoria='$genero'";
                         $resultado = mysqli_query($conexion, $consulta);
                         if (!$resultado) {
                             $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
@@ -93,7 +106,7 @@
                         foreach ($arrayDatos as $pelicula) {
                             echo "<div class=\"pelicula\" >";
                                 echo "<div class=\"imagen\">";
-                                    echo "<img id =\"resplandor\" src=\"img/".$pelicula->getId().".jpg\" alt=\"Imagen Pelicula\">";
+                                    echo "<img id = \"resplandor\" src=\"img/".$pelicula->getId().".jpg\" alt=\"Imagen Pelicula\">";
                                 echo "</div>";
                                 echo "<div class=\"descripcion\">";
                                     echo "<h1>".$pelicula->getTitulo()."</h1>";

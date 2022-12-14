@@ -21,11 +21,11 @@
             ?>
             <div class="categoria">
                 <h1 class="titulo">Terror</h1>
-                <div class="img"><a href="Peliculas.php"><img id="terror" src="img/terror.png" alt="Categoria Terror"></a></div>               
+                <div class="img"><a href="Peliculas.php?genero=terror"><img id="terror" src="img/terror.png" alt="Categoria Terror"></a></div>               
             </div>
             <div class="categoria">
                 <h1 class="titulo">Ciencia Ficcion</h1>
-                <div class="img"><a href="Peliculas.php"><img id="terror" src="img/sci-fi.png" alt="Categoria Ciencia Ficcion"></a></div>               
+                <div class="img"><a href="Peliculas.php?genero=sci-fi"><img id="terror" src="img/sci-fi.png" alt="Categoria Ciencia Ficcion"></a></div>               
             </div>
             
         </div>     
