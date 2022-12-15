@@ -7,6 +7,7 @@
     <title>Votos - Aficine</title>
 </head>
 <body>
-    
+    <?php
+    ?>
 </body>
 </html>

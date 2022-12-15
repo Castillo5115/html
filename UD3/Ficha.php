@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssFicha.css">
     <title>Ficha - Aficine</title>
 </head>
 <body>
-    <a href="Categorias.php"><img src="img/logo.jpeg" alt="Logo Aficine"></a>
+    <div class="cabecera">
+        <a href="Categorias.php"><img src="img/logo.jpeg" alt="Logo Aficine"></a>
+        <?php
+        ?>
+        <h1>Ficha de $ficha -> getTitulo() </h1>
+    </div>
+    
     <?php
         class Ficha{
             // ==================== Constructor ====================
@@ -93,15 +100,15 @@
             // ==================== Funciones ====================
 
             function pintar(){
-                $array = $this -> datos();
-                foreach ($array as $ficha) {
-                    echo "<br>Id: " . $ficha -> getId() . "<br><br>";
-                    echo "Titulo: " . $ficha -> getTitulo() . "<br><br>";
-                    echo "Duracion: " . $ficha -> getDuracionMin() . "<br><br>";
-                    echo "Votos: " . $ficha -> getVotos() . "<br><br>";
-                    echo "Descripcion: " . $ficha -> getDescripcion() . "<br><br>";
-                    echo "Año: " . $ficha -> getAno() . "<br><br>";
-                }
+                // $array = $this -> datos();
+                // foreach ($array as $ficha) {
+                //     echo "<br>Id: " . $ficha -> getId() . "<br><br>";
+                //     echo "Titulo: " . $ficha -> getTitulo() . "<br><br>";
+                //     echo "Duracion: " . $ficha -> getDuracionMin() . "<br><br>";
+                //     echo "Votos: " . $ficha -> getVotos() . "<br><br>";
+                //     echo "Descripcion: " . $ficha -> getDescripcion() . "<br><br>";
+                //     echo "Año: " . $ficha -> getAno() . "<br><br>";
+                // }
             }
 
             // ====================  ====================
@@ -113,5 +120,6 @@
         $d -> pintar();
 
     ?>
+    
 </body>
 </html>
