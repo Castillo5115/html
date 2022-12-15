@@ -113,7 +113,7 @@
                                     echo $pelicula->getDescripcion(); 
                                 echo "</div>";
                                 echo "<div class=\"enlace\">";
-                                    echo"<a href=\"Ficha.php\" class=\"ficha\">Ver Ficha</a>";
+                                    echo"<a href=\"Ficha.php?titulo=".$pelicula->getTitulo()."\" class=\"ficha\">Ver Ficha</a>";
                                 echo"</div>";
                             echo "</div>";
                         }
