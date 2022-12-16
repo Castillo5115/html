@@ -1,2 +1,29 @@
 * {margin: 0px; padding: 0px;font-family: Arial, Helvetica, sans-serif;}
 
+.cabecera{
+    width: 100vw;
+    height: 25vh;
+}
+
+#logo{float: left;padding-left: 2%;padding-top: 0.2%;}
+
+#titulo{float: left; padding-left: 25%;padding-top: 5%;}
+
+.contenido{
+    height: 75vh;
+    width: 100%;
+}
+
+.portada{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+#portada{width: 50%; height: 70%;border: 5px solid orange; border-radius: 10px; margin-top: 10%; margin-left: 25%;}
+
+.datos{
+    width: 60%;
+    height: 100%;
+    float: left;
+    padding-top: 2%;
+}
