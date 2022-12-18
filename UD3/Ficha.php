@@ -105,13 +105,22 @@
                                 echo "</div>";
                                 
                                 echo "<div class=\"datos\">";
-                                    echo "<br>Id: " . $ficha -> getId() . "<br><br>";
-                                    echo "Titulo: " . $ficha -> getTitulo() . "<br><br>";
-                                    echo "Duracion: " . $ficha -> getDuracionMin() . "<br><br>";
-                                    echo "Votos: " . $ficha -> getVotos() . "<br><br>";
-                                    echo "Descripcion: " . $ficha -> getDescripcion() . "<br><br>";
+                                    echo "<h1>" . $ficha -> getTitulo() . "</h1><br>";
+                                    echo "<p>Duracion: " . $ficha -> getDuracionMin() . " min</p><br>";
+                                    echo "<p>Votos: " . $ficha -> getVotos() . "</p><br><br>";
+                                    echo "<p>Sinopsis:<br>" . $ficha -> getDescripcion() . "</p><br><br>";
                                     echo "Año: " . $ficha -> getAno() . "<br><br>";
-                                    echo "<a href=\"Votos.php\">Votos +1</a>";
+                                    echo "<h3>Votar</h3>";
+                                    echo "<form action=\"Votos.php\" method=\"POST\">";
+                                        
+                                        echo "<lable for=\"sumarUno\">".$ficha->getTitulo()."</label>";
+                                        echo"<input type=\"radio\" name=\"titulo\" value=\"".$ficha->getTitulo()."\"><br><br>";
+
+                                        echo "<lable for=\"sumarUno\">Voto +1</label>";
+                                        echo "<input type=\"radio\" name=\"votoUno\" value=\"1\"><br><br>";
+
+                                        echo "<button type=\"sumbit\">Enviar</button>";
+                                    echo "</form>";
                                 echo "</div>";
                             echo "</div>";
                             
@@ -127,6 +136,7 @@
                 $d -> pintar();
 
             ?>
+            
         </div>
         
     

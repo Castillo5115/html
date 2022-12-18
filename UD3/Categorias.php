@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilosCategorias.css">
+    <!-- <link rel="stylesheet" href="estilosCategorias.css"> -->
     <title>AFICINE</title>
 </head>
 <body>
@@ -18,6 +18,55 @@
         </div>
         <div class="listado_peliculas">            
             <?php
+                class Categoria{
+                    function __construct(){
+                    }
+
+                    
+                    function init($id,$nombre){
+                        $this->id = $id;
+                        $this->nombre = $nombre;
+                    }
+                    function getId(){
+                        return $this -> id;
+                    }
+
+                    function getNombre(){
+                        return $this -> nombre;
+                    }
+
+                    function datos(){
+                        $conexion = mysqli_connect('localhost', 'root', '12345');
+                        mysqli_select_db($conexion, 'aficine');
+                        $consulta = "SELECT * FROM Categoria";
+                        $resultado = mysqli_query($conexion, $consulta);
+                        if (!$resultado) {
+                            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+                            $mensaje .= 'Consulta realizada: ' . $consulta;
+                            die($mensaje);
+                        }else{
+                            $i = 0;
+                            $arrayPeliculas = array();
+                            while ($registro = mysqli_fetch_assoc($resultado)) {
+
+                                $cate = new Categoria();
+
+                                $id = $registro['id'];
+                                $nombre = $registro['nombre'];
+                                
+
+                                $cate -> init($id, $nombre);
+                                array_push($arrayPeliculas, $cate);
+                                $i++;
+                            
+                            }
+                            return $arrayPeliculas;
+                    }
+
+                }
+            }
+                $c = new Categoria;
+                $c -> datos();
             ?>
             <div class="categoria">
                 <h1 class="titulo">Terror</h1>
