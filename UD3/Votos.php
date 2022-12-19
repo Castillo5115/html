@@ -10,18 +10,19 @@
     <?php
         class Votos{
             function subirDatos(){
-                $valor = intval($_POST['votoUno']);
-                intval($valor);
+
                 $titulo = $_POST['titulo'];
                 $conexion = mysqli_connect('localhost', 'root', '12345');
-                        mysqli_select_db($conexion, 'aficine');
-                        $consulta = "UPDATE pelicula SET votos += '$titulo' WHERE titulo='$titulo'";
-                        $resultado = mysqli_query($conexion, $consulta);
-                        if (!$resultado) {
-                            $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-                            $mensaje .= 'Consulta realizada: ' . $consulta;
-                            die($mensaje);
-                        }
+                mysqli_select_db($conexion, 'aficine');
+                $consulta = "UPDATE pelicula SET votos = votos + 1 WHERE titulo='$titulo'";
+                $resultado = mysqli_query($conexion, $consulta);
+                if (!$resultado) {
+                    $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
+                    $mensaje .= 'Consulta realizada: ' . $consulta;
+                    die($mensaje);
+                }else{
+                    
+                }
             }
         }
         $v = new Votos;
@@ -29,5 +30,8 @@
         
 
     ?>
+        
+        <h1>Se guerdado tu voto</h1>
+
 </body>
 </html>
