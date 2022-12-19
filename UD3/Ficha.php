@@ -10,6 +10,8 @@
 <body>
     
             <?php
+            ini_set('display_errors', 1);
+            ini_set('html_errors', 1);
                 class Ficha{
                     // ==================== Constructor ====================
                     function __construct(){
@@ -94,6 +96,7 @@
                     // ==================== Funciones ====================
 
                     function pintar(){
+                        $titulo = $_GET['titulo'];
                         $array = $this -> datos();
                         foreach ($array as $ficha) {
                             echo "<div class=\"cabecera\">";
@@ -110,17 +113,10 @@
                                     echo "<p>Votos: " . $ficha -> getVotos() . "</p><br><br>";
                                     echo "<p>Sinopsis:<br>" . $ficha -> getDescripcion() . "</p><br><br>";
                                     echo "Año: " . $ficha -> getAno() . "<br><br>";
-                                    echo "<h3>Votar</h3>";
                                     echo "<form action=\"Votos.php\" method=\"POST\">";
-                                        
-                                        echo "<lable for=\"sumarUno\">".$ficha->getTitulo()."</label>";
-                                        echo"<input type=\"radio\" name=\"titulo\" value=\"".$ficha->getTitulo()."\"><br><br>";
-
-                                        echo "<lable for=\"sumarUno\">Voto +1</label>";
-                                        echo "<input type=\"radio\" name=\"votoUno\" value=\"1\"><br><br>";
-
-                                        echo "<button type=\"sumbit\">Enviar</button>";
+                                    echo "<button type=\"sumbit\" name=\"titulo\" value=\"$titulo\">Like</button>";
                                     echo "</form>";
+
                                 echo "</div>";
                             echo "</div>";
                             

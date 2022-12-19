@@ -1,0 +1,21 @@
+* {margin: 0px; padding: 0px;font-family: Arial, Helvetica, sans-serif;}
+
+
+div{
+    padding: 1%;
+}
+a{
+    text-decoration: none;
+    color: rgb(180, 117, 0);
+    background-color: antiquewhite;
+    border: 1px solid black;
+    padding: 0.5%;
+}
+
+a:hover{
+    box-shadow: 2px 2px 2px 0.3px orange;
+}
+
+.mensaje{
+    
+}
