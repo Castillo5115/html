@@ -1,16 +1,11 @@
 use aficine;
 
-CREATE TABLE Pelicula(
-	id int not null auto_increment,
-    titulo varchar(500) not null,
-    duracionMin int not null,
-    votos int default 0,
-    id_categoria varchar(6) not null,
-    primary key (id),
-    foreign key (id_categoria) references Categoria (id)
-);
-
-DROP TABLE Pelicula;
+DROP TABLE if exists Pelicula_Directores;
+DROP TABLE if exists Pelicula_Actores;
+DROP TABLE if exists Pelicula;
+DROP TABLE if exists Categoria;
+DROP TABLE if exists Directores;
+DROP TABLE if exists Actores;
 
 CREATE TABLE Categoria(
 	id varchar (6) not null,
@@ -18,23 +13,46 @@ CREATE TABLE Categoria(
     primary key(id)
 );
 
+CREATE TABLE Pelicula(
+	id int not null auto_increment,
+    titulo varchar(500) not null,
+    duracionMin int not null,
+    votos int default 0,
+    id_categoria varchar(6) not null,
+    descripcion varchar(10000)not null,
+    año int not null,
+    primary key (id),
+    foreign key (id_categoria) references Categoria (id)
+);
+
 CREATE TABLE Actores(
 	id int not null auto_increment,
     nombre varchar (500) not null,
-    edad int not null,
     primary key (id)
 );
 
 CREATE TABLE Directores(
 	id int not null auto_increment,
-    
+    nombre varchar(500),
 	primary key(id)
 );
 
-DROP TABLE Categoria;
+CREATE TABLE Pelicula_Actores(
+	id_Pelicula int not null,
+    id_Actores int not null,
+    foreign key (id_Pelicula) references Pelicula (id),
+    foreign key (id_Actores) references Actores (id)
+);
 
-INSERT into Categoria (id,nombre) values ("terror", "Terror");
-INSERT into Categoria (id,nombre) values ("sci-fi", "Ciencia Ficcion");
+CREATE TABLE Pelicula_Directores(
+	id_Pelicula int not null,
+    id_Directores int not null,
+    foreign key (id_Pelicula) references Pelicula (id),
+    foreign key (id_Directores) references Directores (id)
+);
+
+INSERT into Categoria (id,nombre) values ("terror", "Terror"),
+										("sci-fi", "Ciencia Ficcion");
 
 INSERT INTO Pelicula (titulo, duracionMin, id_categoria, descripcion, año) VALUES ("IT", 135, "terror", "Cuenta la historia, en un juego de correspondencias con el pasado y el presente, de un grupo de siete amigos que son perseguidos por una entidad sobrenatural, al que llaman «IT», que es capaz de cambiar de forma y se alimenta principalmente del terror que produce en sus víctimas.", 2017), 
 																("Scream", 112, "terror", "Un asesino en serie, con máscara y disfraz negro, siembra el pánico entre los adolescentes de un pueblo californiano. Paralelamente, la joven Sidney Prescott atraviesa un mal momento: se cumple un año desde que murió su madre.", 1996), 
@@ -51,12 +69,32 @@ INSERT INTO Pelicula (titulo, duracionMin, id_categoria, descripcion, año) VALU
 																("Jurassic Park", 127, "sci-fi", "El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático en una isla. Antes de abrir el parque al público general, Hammond invita a una pareja de científicos y a un matemático para que comprueben la viabilidad del proyecto. Sin embargo, el sistema de seguridad falla y los dinosaurios se escapan.", 1993),
 																("Regreso al futuro", 110, "sci-fi", "El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido. Después de impedir su primer encuentro, Marty deberá conseguir que se conozcan y se enamoren, de lo contrario su existencia no sería posible.", 1985);
 
+INSERT INTO Directores (nombre) VALUE ("Andres Muschietti"),
+("Wes Craven"),
+("James Wan"),
+("Parker Finn"),
+("Jhon R. Leonettis"),
+("Gore Verbinski"),
+("Jordan Peele"),
+("Sean S. Cunningham"),
+("Stanley Kubrick"),
+("Steven Spielberg"),
+("Robert Zemeckis");
 
 
-ALTER TABLE Pelicula ADD COLUMN descripcion varchar(10000);
-ALTER TABLE Pelicula ADD COLUMN año int;
 
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(1,1);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(2,2);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(3,3);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(4,4);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(5,5);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(6,6);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(7,7);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(8,1);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(9,8);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(10,9);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(11,10);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(12,11);
+insert into Pelicula_Directores (id_Pelicula,id_Directores)VALUE(13,10);
 
-
-select * from Pelicula;
-select * from Categoria;
+select * from Pelicula_Directores;

@@ -18,7 +18,7 @@
                     }
 
                     
-                    function init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion, $ano){
+                    function init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion, $ano, $director){
                         $this->id = $id;
                         $this->titulo = $titulo;
                         $this->duracionMin = $duracionMin;
@@ -26,6 +26,7 @@
                         $this->id_categoria = $id_categoria;
                         $this->descripcion = $descripcion;
                         $this->ano = $ano;
+                        $this->director = $director;
                     }
 
                     function getId(){
@@ -54,6 +55,9 @@
                     function getAno(){
                         return $this -> ano;
                     }
+                    function getDirector(){
+                        return $this -> director;
+                    }
 
                     // ==================== Conexion mysql ====================
 
@@ -63,7 +67,9 @@
 
                         $conexion = mysqli_connect('localhost', 'root', '12345');
                         mysqli_select_db($conexion, 'aficine');
-                        $consulta = "SELECT * FROM Pelicula WHERE titulo='$titulo'";
+                        $consulta = "SELECT Pelicula.id AS 'id',titulo,duracionMin,votos, id_categoria,descripcion, año,Directores.nombre as 'director' FROM  
+                        Pelicula INNER JOIN Pelicula_Directores on Pelicula.id = Pelicula_Directores.id_Pelicula 
+                        INNER JOIN Directores ON Directores.id = Pelicula_Directores.id_Directores WHERE titulo='$titulo'";
                         $resultado = mysqli_query($conexion, $consulta);
                         if (!$resultado) {
                             $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
@@ -83,8 +89,9 @@
                                 $id_categoria = $registro['id_categoria'];
                                 $descripcion = $registro['descripcion'];
                                 $ano = $registro['año'];
+                                $director = $registro['director'];
 
-                                $f -> init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion, $ano);
+                                $f -> init($id, $titulo, $duracionMin, $votos, $id_categoria, $descripcion, $ano, $director);
                                 array_push($arrayPeliculas, $f);
                                 $i++;
                             
@@ -112,6 +119,7 @@
                                     echo "<p>Duracion: " . $ficha -> getDuracionMin() . " min</p><br>";
                                     echo "<p>Votos: " . $ficha -> getVotos() . "</p><br><br>";
                                     echo "<p>Sinopsis:<br>" . $ficha -> getDescripcion() . "</p><br><br>";
+                                    echo "<p>Director: " . $ficha -> getDirector() . "</p><br><br>";
                                     echo "Año: " . $ficha -> getAno() . "<br><br>";
                                     echo "<form action=\"Votos.php\" method=\"POST\">";
                                     echo "<button type=\"sumbit\" name=\"titulo\" value=\"$titulo\">Like</button>";
