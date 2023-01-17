@@ -5,34 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneo Ping Pong</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- <div class="pagina">
-        <div class="cabecera">
-            <h1 id="titulo">Torneo de prueba</h1>
-        </div>
-        <div class="contenido">
-            <div id="contenedor">
-                <div id="central">
-                    <div id="login">
-                        <div class="titulo">
-                            Bienvenido
-                        </div>
-                        <form id="loginform">
-                            <input type="text" name="usuario" placeholder="Usuario" required>
-                            
-                            <input type="password" placeholder="Contraseña" name="password" required>
-                            
-                            <button type="submit" title="Ingresar" name="Ingresar">Login</button>
-                        </form>
-                        <div class="pie-form">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <?php
             ini_set('display_errors', 1);
             ini_set('html_errors', 1);
@@ -55,8 +30,25 @@
                 }
 
                 function getNombre(){
-                    return $this -> nombre;
+                    return $this -> nombreTorneo;
                 }
+
+                function getFecha(){
+                    return $this -> fecha;
+                }
+
+                function getCantidadJugadores(){
+                    return $this -> cantidadJugadores;
+                }
+
+                function getEstado(){
+                    return $this -> estado;
+                }
+
+                function getCampeon(){
+                    return $this -> campeon;
+                }
+
                 function dameDatos(){
                     $conexion = mysqli_connect('localhost', 'root', '12345');
                     mysqli_select_db($conexion, 'Torneos');
@@ -68,37 +60,65 @@
                         die($mensaje);
                     }else{
                         $i = 0;
-                        $array = array();
+                        $arrayTorneos = array();
                         while ($registro = mysqli_fetch_assoc($resultado)) {
 
-                            $d = new Login();
+                            $datos = new Login();                            
 
                             $id = $registro['id'];
                             $nombreTorneo = $registro['nombre'];
                             $fecha = $registro['fecha'];
                             $cantidadJugadores = $registro['cantidadJugadores'];
                             $estado = $registro['estado'];
-                            $campeon = $registro['campeon'];                            
+                            $campeon = $registro['campeon'];
 
-                            $d -> init($id, $nombreTorneo,$fecha, $cantidadJugadores, $estado, $campeon);
-                            var_dump($d);
-                            array_push($array, $d);
-                            $i++;
+                            $datos -> init($id,$nombreTorneo, $fecha, $cantidadJugadores, $estado, $campeon);
+                            array_push($arrayTorneos, $datos);
+
+                            
+
+                            $i++;                           
                         
                         }
-                        
+                        return $arrayTorneos;
                     }
                 }
-                function pintarForm(){
+
+                function pintarDatos(){
                     $arrayDatos = $this -> dameDatos();
-                    foreach ($arrayDatos as $datosTorneo) {
-                        echo $datosTorneo -> getNombre();
+                    foreach ($arrayDatos as $x) {
+                        echo "<div class=\"pagina\">";
+                            echo "<div class=\"cabecera\">";
+                                echo "<h1 id=\"titulo\">".$x -> getNombre()."</h1>";
+                            echo "</div>";
+                            echo "<div class=\"contenido\">";
+                                echo "<div id=\"contenedor\">";
+                                    echo "<div id=\"central\">";
+                                        echo "<div id=\"login\">";
+                                            echo "<div class=\"titulo\">";
+                                                echo "Bienvenido";
+                                            echo "</div>";
+                                            echo "<form id=\"loginform\">";
+                                                echo "<input type=\"text\" name=\"usuario\" placeholder=\"Usuario\" required>";
+                                                
+                                                echo "<input type=\"password\" placeholder=\"Contraseña\" name=\"password\" required>";
+                                                
+                                                echo "<button type=\"submit\" title=\"Ingresar\" name=\"Ingresar\" value=\"\">Login</button>";
+                                            echo "</form>";
+                                            echo "<div class=\"pie-form\">";
+                                            echo "</div>";
+                                        echo "</div>";
+                                    echo "</div>";
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
                     }
                 }
+                
             }
             $l = new Login;
             $l -> dameDatos();
-            $l -> pintarForm();
+            $l -> pintarDatos();
         ?>
 </body>
 </html>
