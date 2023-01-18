@@ -11,7 +11,7 @@ class LoginAccesoDatos{
 			echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'torneosTenisMesaDB');
-		$consulta = mysqli_prepare($conexion, "SELECT ID FROM T_Torneos ");
+		$consulta = mysqli_prepare($conexion, "SELECT id FROM T_Torneos ");
         $consulta->execute();
         $result = $consulta->get_result();
 
