@@ -66,7 +66,7 @@
                             $datos = new Login();                            
 
                             $id = $registro['id'];
-                            $nombreTorneo = $registro['nombre'];
+                            $nombreTorneo = $registro['nombreTorneo'];
                             $fecha = $registro['fecha'];
                             $cantidadJugadores = $registro['cantidadJugadores'];
                             $estado = $registro['estado'];
