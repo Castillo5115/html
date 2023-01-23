@@ -17,7 +17,7 @@
         
         foreach ($datosTorneos as $torneo)
         {
-            print($torneo->getID());
+            echo $torneo -> getID();
         }
     ?>
 </body>

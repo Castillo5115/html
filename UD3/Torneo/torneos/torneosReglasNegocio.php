@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('html_errors', 1);
+
 require("torneosAccesoDatos.php");
 
 class torneosReglasNegocio{
@@ -46,9 +49,10 @@ class torneosReglasNegocio{
 		$listaTorneos =  array();
 
         foreach ($rs as $torneo){
-            $torneosReglasNegocio = new torneosAccesoDatos();
+            $torneosReglasNegocio = new torneosReglasNegocio();
             $torneosReglasNegocio->init($torneo['id'], $torneo['nombreTorneo'], $torneo['fecha'], $torneo['cantidadJugadores'], $torneo['estado'], $torneo['campeon']);
-            array_push($listaTorneos,$torneosReglasNegocio); 
+            array_push($listaTorneos,$torneosReglasNegocio);
+         
         }
         
         return $listaTorneos;

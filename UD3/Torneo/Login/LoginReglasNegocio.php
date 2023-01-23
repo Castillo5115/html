@@ -46,9 +46,9 @@ class LoginReglasNegocio{
 		$listaTorneos =  array();
 
         foreach ($rs as $torneo){
-            $oTorneosReglasNegocio = new LoginReglasNegocio();
-            $oTorneosReglasNegocio->init($torneo['id'], $torneo['nombreTorneo'], $torneo['fecha'], $torneo['cantidadJugadores'], $torneo['estado'], $torneo['campeon']);
-            array_push($listaTorneos,$oTorneosReglasNegocio);
+            $LoginReglasNegocio = new LoginReglasNegocio();
+            $LoginReglasNegocio->init($torneo['id'], $torneo['nombreTorneo'], $torneo['fecha'], $torneo['cantidadJugadores'], $torneo['estado'], $torneo['campeon']);
+            array_push($listaTorneos,$LoginReglasNegocio);
          
         }
         
