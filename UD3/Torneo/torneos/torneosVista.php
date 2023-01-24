@@ -10,6 +10,8 @@
 <body>
     <h1>Lista de Torneos</h1>
     <?php
+        ini_set('display_errors', 1);
+        ini_set('html_errors', 1);
         require("torneosReglasNegocio.php");
 
         $torneosBL = new torneosReglasNegocio();
@@ -17,8 +19,19 @@
         
         foreach ($datosTorneos as $torneo)
         {
-            echo $torneo -> getID();
+            echo $torneo -> getID(). ' / ';
+            echo $torneo -> getNombre(). ' / ';
+            echo $torneo -> getFecha(). ' / ';
+            echo $torneo -> getCantJugadores(). ' / ';
+            echo $torneo -> getEstado(). ' / ';
+            echo $torneo -> getCampeon(). ' ';
+            if ($_POST == 'administrador') {
+                echo '<a href=\"editar.html\">editar</a>'.' <a href=\"eliminar.html\">eliminar</a>'.'<br>';   
+            }else {
+                echo '<br>';
+            }
         }
     ?>
+    
 </body>
 </html>
