@@ -17,7 +17,10 @@
         
         foreach ($datosTorneos as $torneo)
         {
-            echo "<div class=\"pagina\">";
+            
+        }
+    ?>
+    echo "<div class=\"pagina\">";
                 echo "<div class=\"cabecera\">";
                     echo "<h1 id=\"titulo\">Torneos AC</h1>";
                 echo "</div>";
@@ -42,8 +45,6 @@
                     echo "</div>";
                 echo "</div>";
             echo "</div>";
-        }
-    ?>
 </body>
 
 </html>
