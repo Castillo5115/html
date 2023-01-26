@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneo Ping Pong</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
@@ -20,31 +20,28 @@
             
         }
     ?>
-    echo "<div class=\"pagina\">";
-                echo "<div class=\"cabecera\">";
-                    echo "<h1 id=\"titulo\">Torneos AC</h1>";
-                echo "</div>";
-                echo "<div class=\"contenido\">";
-                    echo "<div id=\"contenedor\">";
-                        echo "<div id=\"central\">";
-                            echo "<div id=\"login\">";
-                                echo "<div class=\"titulo\">";
-                                    echo "Bienvenido";
-                                echo "</div>";
-                                echo "<form id=\"loginform\" action=\"../torneos/torneosVista.php\" method=\"POST\">";
-                                    echo "<input type=\"text\" name=\"usuario\" placeholder=\"Usuario\" required>";
+    <div class="pagina">
+                <div class="cabecera">
+                    <h1 id="titulo">Torneos AC</h1>
+                </div>
+                <div class="contenido">
+                    <div id="contenedor">
+                        <div id="central">
+                            <div id="login">
+                                <form id="loginform" action="../torneos/torneosVista.php" method="POST">
+                                    <input type="text" name="usuario" placeholder="Usuario" required>
                                     
-                                    echo "<input type=\"password\" placeholder=\"Contraseña\" name=\"password\" required>";
+                                    <input type="password" placeholder="Contraseña" name="password" required>
                                     
-                                    echo "<button type=\"submit\" title=\"Ingresar\" name=\"Ingresar\" value=\"\">Login</button>";
-                                echo "</form>";
-                                echo "<div class=\"pie-form\">";
-                                echo "</div>";
-                            echo "</div>";
-                        echo "</div>";
-                    echo "</div>";
-                echo "</div>";
-            echo "</div>";
+                                    <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                                </form>
+                                <div class="pie-form">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
 
 </html>
