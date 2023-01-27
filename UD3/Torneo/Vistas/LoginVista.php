@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneo Ping Pong</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
     <?php
-        require("LoginReglasNegocio.php");
+        require("../ReglasNegocio/LoginReglasNegocio.php");
 
         $torneosBL = new LoginReglasNegocio();
         $datosTorneos = $torneosBL->obtener();

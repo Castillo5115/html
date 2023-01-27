@@ -1,6 +1,6 @@
 <?php
 
-require("LoginAccesoDatos.php");
+require("../AccesoDatos/LoginAccesoDatos.php");
 
 class LoginReglasNegocio{
 
