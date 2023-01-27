@@ -58,5 +58,14 @@ class torneosReglasNegocio{
         return $listaTorneos;
         
     }
+
+    function crearTorneo(){
+        $nombreTorneo = $_POST['nombreToreno'];
+        $fecha = $_POST['fecha'];
+    }
+
+    
 }
+
+echo $_POST['nombreTorneo'] ." - ". $_POST['fecha'];
 
