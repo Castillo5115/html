@@ -60,6 +60,10 @@ insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVic
                                                                                                                             ('Yeray Rus', 10, 5, 50, 5, 0),
 																															('Adrian Guinot', 3,3,100,1,1);
 
+insert into T_Usuarios (nombre, user, passwd, tipoUsuario) value ('Alexis Ortiz', 'user1', '12345', 'Administrador');
+insert into T_Usuarios (nombre, user, passwd, tipoUsuario) value ('Carmelo Owners', 'player1', 'Ageofempires2', 'Jugador');
+
 select * from T_Torneos;
 select * from T_Jugadores;
+select * from T_Partidos;
 select * from T_Usuarios;
