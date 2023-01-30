@@ -12,7 +12,7 @@
         <h1 id="titulo">Lista de Torneos (Administrador)</h1>
     </div>
     <div class="contenido">
-        <a href="torneosVistaAdmin.php">Crear Torneo Nuevo</a>
+        <a href="gestionTorneosVista.php">Crear Torneo Nuevo</a>
         <table id="tablaTorneos">
             <tr>
                 <th class="celda">ID</th>
