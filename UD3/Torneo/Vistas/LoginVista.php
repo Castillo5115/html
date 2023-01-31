@@ -9,10 +9,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST")
 
     var_dump($perfil);
 
-    if ($perfil==="Administrador" || $perfil==="Jugador")
-    {
+    if ($perfil==="administrador"){
         session_start(); //inicia o reinicia una sesión
-        echo "Funciona";
+        $_SESSION['usuario'] = $_POST['usuario'];
+        header("Location: torneosVistaAdmin.php");
+    }elseif ($perfil==="jugador") {
+        session_start(); //inicia o reinicia una sesión
         $_SESSION['usuario'] = $_POST['usuario'];
         header("Location: torneosVistaJugador.php");
     }
