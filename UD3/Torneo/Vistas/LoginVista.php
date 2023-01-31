@@ -1,3 +1,28 @@
+<?php
+
+require ("../ReglasNegocio/LoginReglasNegocio.php");
+
+if ($_SERVER["REQUEST_METHOD"]=="POST")
+{
+    $usuarioBL = new LoginReglasNegocio();
+    $perfil = $usuarioBL->verificar($_POST['usuario'],$_POST['password']);
+
+    var_dump($perfil);
+
+    if ($perfil==="Administrador" || $perfil==="Jugador")
+    {
+        session_start(); //inicia o reinicia una sesión
+        echo "Funciona";
+        $_SESSION['usuario'] = $_POST['usuario'];
+        header("Location: torneosVistaJugador.php");
+    }
+    else
+    {
+        $error = true;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,21 +30,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Torneo Ping Pong</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <!-- <link rel="stylesheet" href="../css/login.css"> -->
 </head>
 
 <body>
-    <?php
-        require("../ReglasNegocio/LoginReglasNegocio.php");
-
-        $torneosBL = new LoginReglasNegocio();
-        $datosTorneos = $torneosBL->obtener();
-        
-        foreach ($datosTorneos as $torneo)
-        {
-            
-        }
-    ?>
     <div class="pagina">
                 <div class="cabecera">
                     <h1 id="titulo">Torneos AC</h1>
@@ -28,7 +42,7 @@
                     <div id="contenedor">
                         <div id="central">
                             <div id="login">
-                                <form id="loginform" action="../torneos/torneosVista.php" method="POST">
+                                <form id="loginform" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                     <input type="text" name="usuario" placeholder="Usuario" required>
                                     
                                     <input type="password" placeholder="Contraseña" name="password" required>

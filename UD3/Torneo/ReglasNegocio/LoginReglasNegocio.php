@@ -7,54 +7,55 @@ class LoginReglasNegocio{
 
 	function __construct(){}
 
-    function init($id, $nombreTorneo, $fecha, $cantidadJugadores, $estado, $campeon){
-        $this->id = $id;
-        $this->nombreTorneo = $nombreTorneo;
-        $this->fecha = $fecha;
-        $this->cantidadJugadores = $cantidadJugadores;
-        $this->estado = $estado;
-        $this->campeon = $campeon;
-    }
+    // function init($id, $nombre, $user, $passwd, $tipoUsuario){
+    //     $this->id = $id;
+    //     $this->nombre = $nombre;
+    //     $this->user = $user;
+    //     $this->passwd = $passwd;
+    //     $this->tipoUsuario = $tipoUsuario;
+    // }
 
-    function getID(){
-        return $this->id;
-    }
+    // function getID(){
+    //     return $this->id;
+    // }
 
-    function getNombre(){
-        return $this->nombreTorneo;
-    }
+    // function getNombre(){
+    //     return $this->nombre;
+    // }
 
-    function getFecha(){
-        return $this->fecha;
-    }
+    // function getUser(){
+    //     return $this->user;
+    // }
 
-    function getCantJugadores(){
-        return $this->cantidadJugadores;
-    }
+    // function getPasswd(){
+    //     return $this->passwd;
+    // }
 
-    function getEstado(){
-        return $this->estado;
-    }
+    // function getTipoUsuario(){
+    //     return $this->tipoUsuario;
+    // }
 
-    function getCampeon(){
-        return $this->campeon;
-    }
+    // function obtener(){
+    //     $torneosDAL = new LoginAccesoDatos();
+    //     $rs = $torneosDAL->obtener();
 
-    function obtener(){
-        $torneosDAL = new LoginAccesoDatos();
-        $rs = $torneosDAL->obtener();
+	// 	$listaTorneos =  array();
 
-		$listaTorneos =  array();
-
-        foreach ($rs as $torneo){
-            $LoginReglasNegocio = new LoginReglasNegocio();
-            $LoginReglasNegocio->init($torneo['id'], $torneo['nombreTorneo'], $torneo['fecha'], $torneo['cantidadJugadores'], $torneo['estado'], $torneo['campeon']);
-            array_push($listaTorneos,$LoginReglasNegocio);
+    //     foreach ($rs as $usuarios){
+    //         $LoginReglasNegocio = new LoginReglasNegocio();
+    //         $LoginReglasNegocio->init($usuarios['id'], $usuarios['nombre'], $usuarios['user'], $usuarios['passwd'], $usuarios['tipoUsuario']);
+    //         array_push($listaTorneos,$LoginReglasNegocio);
          
-        }
+    //     }
         
-        return $listaTorneos;
+    //     return $listaTorneos;
         
+    // }
+
+    function verificar($usuario, $clave){
+        $usuariosDAL = new LoginAccesoDatos();
+        $res = $usuariosDAL->verificar($usuario,$clave);
+        return $res;
+
     }
 }
-
