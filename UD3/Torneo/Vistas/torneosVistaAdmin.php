@@ -18,6 +18,11 @@
     
     <h1 id="titulo">Lista de Torneos (Administrador)</h1>
     <a href="../logout.php">Cerrar sesión</a>
+
+    <?php
+        
+    ?>
+    
     <div class="contenido">
         <a href="gestionTorneosVista.php">Crear Torneo Nuevo</a>
         <table id="tablaTorneos">
@@ -34,6 +39,8 @@
                 $torneosBL = new torneosReglasNegocio();
                 $datosTorneos = $torneosBL->obtener();
             
+                $numeroRegistros = 0 ;
+
                 foreach ($datosTorneos as $torneo){
                     echo "<tr>";
                         echo "<td id=\"nombre\" class=\"celda\">". $torneo->getNombre() ."</td>";
@@ -44,10 +51,11 @@
                         echo "<td><a href=\"\">Editar</a></td>";
                         echo "<td><a href=\"borrarTorneo.php?id=".$torneo->getID()."\">Eliminar</a></td>";
                     echo "</tr>";
+                    $numeroRegistros++;
                 }
             ?>
-            
         </table>
+        <p>Número de registros : <?php echo $numeroRegistros?></p>
     </div> 
 </body>
 </html>

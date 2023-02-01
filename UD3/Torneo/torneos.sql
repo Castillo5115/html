@@ -1,3 +1,4 @@
+
 use Torneos;
 
 drop table if exists T_Partidos;
@@ -50,6 +51,9 @@ insert into T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado, campeon) 
 insert into T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado, campeon) value ('Torneo Ping Pong IES Son Ferrer 2GS', '2022-12-22', 8, 'Finalizado', 'Carlos Acedo');
 insert into T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado ,campeon) value ('Torneo Ping Pong Federacion Europea', '2012-01-27', 8, 'Finalizado', 'Raul Brocal'),
 																						('Torneo Ping Pong Calviá', '2020-05-12', 8, 'Finalizado', 'Raul Brocal');
+                                                                                        
+insert into T_Torneos (nombreTorneo, fecha) value ('Torneo Ping Pong Mallorca 2023', '2023-02-03');
+
 insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVictorias, torneosJugados, torneosGanados) value ('Adrian Castillo', 3, 3, 100, 1, 1);
 insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVictorias, torneosJugados, torneosGanados) value ('Daniel Okolo', 3, 3, 100, 1, 1);
 insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVictorias, torneosJugados, torneosGanados) value ('Carlos Acedo', 16, 11, 68, 4, 3);
@@ -58,6 +62,7 @@ insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVic
 																															('Fernando Buendia', 2, 1, 50, 1, 0),
                                                                                                                             ('Yeray Rus', 10, 5, 50, 5, 0),
 																															('Adrian Guinot', 3,3,100,1,1);
+
 
 
 select * from T_Torneos;

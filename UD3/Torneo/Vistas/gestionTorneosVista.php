@@ -13,7 +13,7 @@
         <label for="nombreToreno">Nombre: </label>
         <input type='text' name='nombreTorneo' id='nombreTorneo'><br><br>
         <label for="fecha">Fecha: </label>
-        <input type='text' name='fecha' id='fecha' placeholder='yy-mm-dd'><br><br>
+        <input type='date' name='fecha' id='fecha'><br><br>
         <input type="submit" value="Crear torneo">
     </form>
 </body>

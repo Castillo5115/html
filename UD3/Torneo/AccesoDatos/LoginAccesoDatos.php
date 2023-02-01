@@ -54,7 +54,7 @@ class LoginAccesoDatos{
             return $myrow['tipoUsuario'];
         } 
         else 
-        {
+        { 
             return 'Usuario Incorrecto';
         }
 	}

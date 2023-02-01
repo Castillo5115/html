@@ -34,6 +34,7 @@
     ?>
 
     <a href="../logout.php">Cerrar sesión</a>
+    <p>Número de registros : <?php echo $numeroRegistros?></p>
     <h1>Lista de Torneos</h1>
     <table id="tablaTorneos">
         <tr>
@@ -49,6 +50,8 @@
             $torneosBL = new torneosReglasNegocio();
             $datosTorneos = $torneosBL->obtener();
         
+            $numeroRegistros;
+
             foreach ($datosTorneos as $torneo){
                 echo "<tr>";
                     echo "<td class=\"celda\">". $torneo->getNombre() ."</td>";
@@ -57,7 +60,10 @@
                     echo "<td class=\"celda\">". $torneo->getEstado() ."</td>";
                     echo "<td class=\"celda\">". $torneo->getCampeon() ."</td>";
                 echo "</tr>";
+                $numeroRegistros++;
             }
+
+
         ?>
     </table>    
 </body>
