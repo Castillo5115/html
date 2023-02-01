@@ -7,6 +7,7 @@
     <title>Crear Torneo</title>
 </head>
 <body>
+    <a href="../logout.php">Cerrar sesión</a>
     <h1>CREAR TORNEO NUEVO</h1>
     <form action="../ReglasNegocio/torneosReglasNegocio.php" method="post">
         <label for="nombreToreno">Nombre: </label>

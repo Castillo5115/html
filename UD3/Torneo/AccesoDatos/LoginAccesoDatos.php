@@ -23,7 +23,6 @@ class LoginAccesoDatos{
 	}
 
 	function verificar($usuario, $clave){
-		var_dump($usuario);
 		$conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
 		{

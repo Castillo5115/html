@@ -24,6 +24,7 @@
     <title>Lista de Torneos</title>
 </head>
 <body>
+    <a href="../logout.php">Cerrar sesión</a>
     <h1>Lista de Torneos</h1>
     <table id="tablaTorneos">
         <tr>

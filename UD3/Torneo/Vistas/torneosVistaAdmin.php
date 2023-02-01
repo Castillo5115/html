@@ -23,9 +23,9 @@
     <title>Lista de Torneos</title>
 </head>
 <body>
-    <div class="cabecera">
-        <h1 id="titulo">Lista de Torneos (Administrador)</h1>
-    </div>
+    
+    <h1 id="titulo">Lista de Torneos (Administrador)</h1>
+    <a href="../logout.php">Cerrar sesión</a>
     <div class="contenido">
         <a href="gestionTorneosVista.php">Crear Torneo Nuevo</a>
         <table id="tablaTorneos">

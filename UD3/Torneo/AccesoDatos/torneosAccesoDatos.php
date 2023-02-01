@@ -34,13 +34,11 @@ class torneosAccesoDatos{
  		mysqli_select_db($conexion, 'Torneos');
 
 		if ($fecha < 2023) {
-			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombre, fecha) value ($nombre, $fecha, 8, 'Finalizado')");
+			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado) value ($nombre, $fecha, 8, 'Finalizado')");
         	$insert->execute();
-        	$result = $insert->get_result();
 		}else{
-			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombre, fecha) value ($nombre, $fecha, 8, 'En Curso')");
+			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado) value ($nombre, $fecha, 8, 'En Curso')");
         	$insert->execute();
-        	$result = $insert->get_result();
 		}
 	}
 }

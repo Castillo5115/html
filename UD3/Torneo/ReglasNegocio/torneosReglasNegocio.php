@@ -59,9 +59,10 @@ class torneosReglasNegocio{
         
     }
 
-    function crearTorneo(){
+    function insertar($nombre, $fecha){
         $crearTorneo = new torneosAccesoDatos;
-        $crearTorneo->insertar($_POST['nombreTorneo'], $_POST['fecha']);
+        $res = $crearTorneo->insertar($usuario,$clave);
+        return $res;
     }
 
 }
