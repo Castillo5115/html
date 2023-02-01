@@ -59,10 +59,9 @@ class torneosReglasNegocio{
         
     }
 
-    function insertar($nombre, $fecha){
-        $crearTorneo = new torneosAccesoDatos;
-        $res = $crearTorneo->insertar($usuario,$clave);
-        return $res;
+    function eliminar($idTorneo){
+        $torneos = new torneosAccesoDatos();
+        $torneos->eliminar($idTorneo);
     }
 
 }

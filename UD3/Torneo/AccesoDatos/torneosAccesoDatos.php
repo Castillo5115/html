@@ -25,20 +25,18 @@ class torneosAccesoDatos{
 	}
 
 	function insertar($nombre, $fecha){
+		
+	}
 
+	function eliminar($idTorneo){
 		$conexion = mysqli_connect('localhost','root','12345');
 		if (mysqli_connect_errno())
 		{
 			echo "Error al conectar a MySQL: ". mysqli_connect_error();
 		}
  		mysqli_select_db($conexion, 'Torneos');
-
-		if ($fecha < 2023) {
-			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado) value ($nombre, $fecha, 8, 'Finalizado')");
-        	$insert->execute();
-		}else{
-			$insert = mysqli_prepare($conexion, "INSERT INTO T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado) value ($nombre, $fecha, 8, 'En Curso')");
-        	$insert->execute();
-		}
+		$consulta = mysqli_prepare($conexion, "DELETE FROM T_Torneos WHERE id = $idTorneo");
+        $consulta->execute();
 	}
+
 }

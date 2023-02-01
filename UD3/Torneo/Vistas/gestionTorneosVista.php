@@ -9,7 +9,7 @@
 <body>
     <a href="../logout.php">Cerrar sesión</a>
     <h1>CREAR TORNEO NUEVO</h1>
-    <form action="../ReglasNegocio/torneosReglasNegocio.php" method="post">
+    <form action="crearTorneo.php" method="post">
         <label for="nombreToreno">Nombre: </label>
         <input type='text' name='nombreTorneo' id='nombreTorneo'><br><br>
         <label for="fecha">Fecha: </label>

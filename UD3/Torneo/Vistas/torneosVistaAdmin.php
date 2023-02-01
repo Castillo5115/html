@@ -1,18 +1,3 @@
-<?php
-    // session_start();
-    // $_SESSION = array(); // Destruir todas las variables de sesión.
-    // if (ini_get("session.use_cookies")) {
-    //     $params = session_get_cookie_params();
-    //     setcookie(session_name(), '', time() - 42000,
-    //         $params["path"], $params["domain"],
-    //         $params["secure"], $params["httponly"]
-    //     );
-    // }
-    // session_destroy();
-    
-    // header("Location: LoginVista.php");
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,14 +8,20 @@
     <title>Lista de Torneos</title>
 </head>
 <body>
+<?php
+        session_start(); // reanudamos la sesión
+        if (!isset($_SESSION['usuario']))
+        {
+            header("Location: login.php");
+        }
+    ?>
     
     <h1 id="titulo">Lista de Torneos (Administrador)</h1>
     <a href="../logout.php">Cerrar sesión</a>
     <div class="contenido">
         <a href="gestionTorneosVista.php">Crear Torneo Nuevo</a>
         <table id="tablaTorneos">
-            <tr>
-                <th class="celda">ID</th>
+            <tr> 
                 <th class="celda">Nombre del Torneo</th>
                 <th class="celda">Fecha</th>
                 <th class="celda">Cantidad de Jugadores</th>
@@ -45,14 +36,13 @@
             
                 foreach ($datosTorneos as $torneo){
                     echo "<tr>";
-                        echo "<td class=\"celda\">". $torneo->getID() ."</td>";
-                        echo "<td class=\"celda\">". $torneo->getNombre() ."</td>";
-                        echo "<td class=\"celda\">". $torneo->getFecha() ."</td>";
-                        echo "<td class=\"celda\">". $torneo->getCantJugadores() ."</td>";
-                        echo "<td class=\"celda\">". $torneo->getEstado() ."</td>";
-                        echo "<td class=\"celda\">". $torneo->getCampeon() ."</td>";
-                        echo "<td><a href=\"torneosVistaAdmin.php\">Editar</a></td>";
-                        echo "<td><a href=\"torneosVistaAdmin.php\">Eliminar</a></td>";
+                        echo "<td id=\"nombre\" class=\"celda\">". $torneo->getNombre() ."</td>";
+                        echo "<td id=\"fecha\" class=\"celda\">". $torneo->getFecha() ."</td>";
+                        echo "<td id=\"cantidadJugadores\" class=\"celda\">". $torneo->getCantJugadores() ."</td>";
+                        echo "<td id=\"estado\" class=\"celda\">". $torneo->getEstado() ."</td>";
+                        echo "<td id=\"campeon\" class=\"celda\">". $torneo->getCampeon() ."</td>";
+                        echo "<td><a href=\"\">Editar</a></td>";
+                        echo "<td><a href=\"borrarTorneo.php?id=".$torneo->getID()."\">Eliminar</a></td>";
                     echo "</tr>";
                 }
             ?>
