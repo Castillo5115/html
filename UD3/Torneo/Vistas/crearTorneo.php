@@ -17,4 +17,4 @@ $consulta = mysqli_prepare($conexion, "INSERT into T_Torneos (nombreTorneo, fech
 
 $consulta->execute();
 
-header("Location: torneosVistaAdmin.php");
+header("Location: torneosVistaAdministrador.php");

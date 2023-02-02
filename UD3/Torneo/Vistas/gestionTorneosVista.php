@@ -7,14 +7,24 @@
     <title>Crear Torneo</title>
 </head>
 <body>
-    <a href="../logout.php">Cerrar sesión</a>
-    <h1>CREAR TORNEO NUEVO</h1>
-    <form action="crearTorneo.php" method="post">
-        <label for="nombreToreno">Nombre: </label>
-        <input type='text' name='nombreTorneo' id='nombreTorneo'><br><br>
-        <label for="fecha">Fecha: </label>
-        <input type='date' name='fecha' id='fecha'><br><br>
-        <input type="submit" value="Crear torneo">
-    </form>
+    <?php
+        require('../ReglasNegocio/torneosReglasNegocio.php');
+        $_GET['modo'];
+
+        if ($_GET['modo'] == 'crear') {
+            echo '<a href="../logout.php">Cerrar sesión</a>';
+            echo '<h1>CREAR TORNEO NUEVO</h1>';
+            echo '<form action="crearTorneo.php" method="post">';
+                echo '<label for="nombreToreno">Nombre: </label>';
+                echo '<input type="text" name="nombreTorneo" id="nombreTorneo"><br><br>';
+                echo '<label for="fecha">Fecha: </label>';
+                echo '<input type="date" name="fecha" id="fecha"><br><br>';
+                echo '<input type="submit" value="Crear torneo">';
+            echo '</form>';
+        }else if ($_GET['modo'] == 'editar'){
+            
+        }
+    ?>
+    
 </body>
 </html>

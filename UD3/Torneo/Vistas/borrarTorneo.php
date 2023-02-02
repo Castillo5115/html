@@ -16,4 +16,4 @@ mysqli_select_db($conexion, 'Torneos');
 $consulta = mysqli_prepare($conexion, "DELETE FROM T_Torneos WHERE id = $id_torneo");
 $consulta->execute();
 
-header("Location: torneosVistaAdmin.php");
+header("Location: torneosVistaAdministrador.php");

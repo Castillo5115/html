@@ -59,9 +59,4 @@ class torneosReglasNegocio{
         
     }
 
-    function eliminar($idTorneo){
-        $torneos = new torneosAccesoDatos();
-        $torneos->eliminar($idTorneo);
-    }
-
 }

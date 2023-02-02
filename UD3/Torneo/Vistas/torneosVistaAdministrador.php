@@ -24,7 +24,7 @@
     ?>
     
     <div class="contenido">
-        <a href="gestionTorneosVista.php">Crear Torneo Nuevo</a>
+        <a href="gestionTorneosVista.php?modo=crear">Crear Torneo Nuevo</a>
         <table id="tablaTorneos">
             <tr> 
                 <th class="celda">Nombre del Torneo</th>
@@ -48,7 +48,7 @@
                         echo "<td id=\"cantidadJugadores\" class=\"celda\">". $torneo->getCantJugadores() ."</td>";
                         echo "<td id=\"estado\" class=\"celda\">". $torneo->getEstado() ."</td>";
                         echo "<td id=\"campeon\" class=\"celda\">". $torneo->getCampeon() ."</td>";
-                        echo "<td><a href=\"\">Editar</a></td>";
+                        echo "<td><a href=\"gestionTorneosVista.php?modo=editar\">Editar</a></td>";
                         echo "<td><a href=\"borrarTorneo.php?id=".$torneo->getID()."\">Eliminar</a></td>";
                     echo "</tr>";
                     $numeroRegistros++;
