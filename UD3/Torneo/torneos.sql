@@ -52,7 +52,7 @@ insert into T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado, campeon) 
 insert into T_Torneos (nombreTorneo, fecha, cantidadJugadores, estado ,campeon) value ('Torneo Ping Pong Federacion Europea', '2012-01-27', 8, 'Finalizado', 'Raul Brocal'),
 																						('Torneo Ping Pong Calviá', '2020-05-12', 8, 'Finalizado', 'Raul Brocal');
                                                                                         
-insert into T_Torneos (nombreTorneo, fecha) value ('Torneo Ping Pong Mallorca 2023', '2023-02-03');
+insert into T_Torneos (nombreTorneo, fecha) value ('Torneo de Prueba', '2023-02-03');
 
 insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVictorias, torneosJugados, torneosGanados) value ('Adrian Castillo', 3, 3, 100, 1, 1);
 insert into T_Jugadores (nombre, partidosJugados, partidosGanados, porcentajeVictorias, torneosJugados, torneosGanados) value ('Daniel Okolo', 3, 3, 100, 1, 1);

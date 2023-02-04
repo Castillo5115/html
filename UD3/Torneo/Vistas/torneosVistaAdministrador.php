@@ -49,13 +49,14 @@
                         echo "<td id=\"estado\" class=\"celda\">". $torneo->getEstado() ."</td>";
                         echo "<td id=\"campeon\" class=\"celda\">". $torneo->getCampeon() ."</td>";
                         echo "<td><a href=\"gestionTorneosVista.php?modo=editar\">Editar</a></td>";
-                        echo "<td><a href=\"borrarTorneo.php?id=".$torneo->getID()."\">Eliminar</a></td>";
+                        echo "<td><a href=\"borrarTorneo.php?id=\"".$torneo->getID()."\"\">Eliminar</a></td>";
                     echo "</tr>";
                     $numeroRegistros++;
                 }
             ?>
         </table>
         <p>Número de registros : <?php echo $numeroRegistros?></p>
+        <a href="jugadoresVista.php">Lista de Jugadores Registrados</a> 
     </div> 
 </body>
 </html>

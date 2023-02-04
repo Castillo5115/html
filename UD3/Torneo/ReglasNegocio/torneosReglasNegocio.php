@@ -58,5 +58,4 @@ class torneosReglasNegocio{
         return $listaTorneos;
         
     }
-
 }

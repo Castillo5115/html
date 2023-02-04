@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="torneos.css">
+    <link rel="stylesheet" href="../css/torneos.css">
     <title>Lista de Torneos</title>
 </head>
 <body>
@@ -34,7 +34,6 @@
     ?>
 
     <a href="../logout.php">Cerrar sesión</a>
-    <p>Número de registros : <?php echo $numeroRegistros?></p>
     <h1>Lista de Torneos</h1>
     <table id="tablaTorneos">
         <tr>
@@ -62,9 +61,9 @@
                 echo "</tr>";
                 $numeroRegistros++;
             }
-
-
         ?>
-    </table>    
+    </table>
+    <p>Número de registros : <?php echo $numeroRegistros?></p> 
+    <a href="jugadoresVista.php">Lista de Jugadores Registrados</a>   
 </body>
 </html>
