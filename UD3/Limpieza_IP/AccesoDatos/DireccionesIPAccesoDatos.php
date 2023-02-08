@@ -1,5 +1,8 @@
 <?php
-class DireccionIPAccesoDatos{
+ini_set('display_errors', 1);
+ini_set('html_errors', 1);
+
+class DireccionesIPAccesoDatos{
     function __construct(){}
     
     function obtener(){
@@ -10,7 +13,7 @@ class DireccionIPAccesoDatos{
                 echo "Error al conectar a MySQL: ". mysqli_connect_error();
             }
              mysqli_select_db($conexion, 'DireccionesIP');
-            $consulta = mysqli_prepare($conexion, "SELECT * FROM direcciones_ip ");
+            $consulta = mysqli_prepare($conexion, "SELECT id ip FROM direcciones_ip ");
             $consulta->execute();
             $result = $consulta->get_result();
     
