@@ -1,17 +1,18 @@
 window.onload = function() {
-  let nodoInput = document.getElementById();
+  let letra = document.getElementById('letra');
+  letra.addEventListener('keyup', dame_datos);
 }
 
-function showHint(str) {
-    if (str.length == 0) {
-      document.getElementById("txtHint").innerHTML = "";
-      return;
-    } else {
-      const xmlhttp = new XMLHttpRequest();
-      xmlhttp.onload = function() {
-        document.getElementById("txtHint").innerHTML = this.responseText;
-      }
-    xmlhttp.open("GET", "php/db.php?letra=" + str);
-    xmlhttp.send();
+function dame_datos(dato){
+  if (dato.length == 0) {
+    document.getElementById("datos").innerHTML = "";
+    return;
+  } else {
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("datos").innerHTML = this.responseText;
     }
+  xmlhttp.open("GET", "php/db.php?str=" + dato);
+  xmlhttp.send();
   }
+}
