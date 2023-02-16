@@ -1,22 +1,32 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('html_errors', 1);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    header(" charset=utf-8");
+    
+    $conexion = mysqli_connect('localhost','root','12345');
+	    if (mysqli_connect_errno()){
+				echo "Error al conectar a MySQL: ". mysqli_connect_error();
+		}
+        $letra = $_REQUEST["letra"];
+        mysqli_select_db($conexion, 'world');
+		$consulta = mysqli_prepare($conexion, "select Name from country where Name like '".$letra."%' order by Name");
+        $consulta->execute();
+        $result = $consulta->get_result();
+        $paises =  array();
 
-$letra = $_REQUEST['str'];
-$comparador = strtoupper($letra);
+        while ($myrow = $result->fetch_assoc()) {
+            echo $myrow['Name'];
+        }
+		
+        
 
-$conexion = mysqli_connect('localhost', 'root', '12345');
-mysqli_select_db($conexion, 'world');
-$consulta = "SELECT  Name FROM city where (Name REGEXP '^$letra')";
-$resultado = mysqli_query($conexion, $consulta);
+   
+   
+   
+    
 
 
-if (!$resultado) {
-    $mensaje = 'Consulta invalida: ' . mysqli_error($conexion) . "\n";
-    $mensaje .= 'Consulta realizada: ' . $consulta;
-    die($mensaje);
-}else{
-    while ($registro = mysqli_fetch_assoc($resultado)) {
-        echo $registro['Name']. ", ";
-    }
-}
+
+   
+
+?>

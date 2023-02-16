@@ -1,13 +1,22 @@
-function dame_datos(dato){
-    if (dato.length == 0) {
-      document.getElementById("datos").innerHTML = "";
-      return;
-    } else {
-      const xmlhttp = new XMLHttpRequest();
-      xmlhttp.onload = function() {
-        document.getElementById("datos").innerHTML = this.responseText;
-      }
-    xmlhttp.open("GET", "php/db.php?str=" + dato);
-    xmlhttp.send();
+window.onload = function(){
+  let nodoText = document.getElementById("letra");
+  
+  nodoText.addEventListener("change",mandarLetra);
+  function mandarLetra(){      
+    letra = nodoText.value
+    console.log(letra);        
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        
+          
+            document.getElementById("opcion").innerHTML = this.responseText;
+        
+      
+      
     }
+
+    xmlhttp.open("POST", "php/dp.php",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+    xmlhttp.send("letra="+letra);
+  }
   }
